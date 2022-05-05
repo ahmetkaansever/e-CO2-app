@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#546ECD">
+
+    <TextView
+        android:id="@+id/primaryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Secondary Usage"
+        android:textSize="19sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="270dp"
+        android:layout_height="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/primaryText"
+        android:layout_marginTop="5dp"
+        android:background="@color/black"/>
+
+    <LinearLayout
+        android:id="@+id/houseUsage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/primaryText"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/nutritionLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/nutritionText"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbackground"
+                android:gravity="center"
+                android:text="Nutrition"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/nutritionEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/nutritionText"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="70dp"
+                android:inputType="numberDecimal"
+                android:maxLength="6"
+                android:minEms="2"
+                android:hint="$"
+                android:maxLines="1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pharmaceuticalsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/pharmaceuticalsText"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbackground"
+                android:gravity="center"
+                android:text="Pharmaceuticals"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/pharmaceuticalsEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/pharmaceuticalsText"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="70dp"
+                android:inputType="numberDecimal"
+                android:maxLength="6"
+                android:hint="$"
+                android:minEms="2"
+                android:maxLines="1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/clothingLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/clothingText"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbackground"
+                android:gravity="center"
+                android:text="Clothing"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/clothingEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/clothingText"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="70dp"
+                android:inputType="numberDecimal"
+                android:maxLength="6"
+                android:hint="$"
+                android:minEms="2"
+                android:maxLines="1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/paperProductsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/paperProductsText"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbackground"
+                android:gravity="center"
+                android:text="Paper Products"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/paperProductsEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/paperProductsText"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="70dp"
+                android:inputType="numberDecimal"
+                android:maxLength="6"
+                android:hint="$"
+                android:minEms="2"
+                android:maxLines="1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/itEquipmentLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/itEquipmentText"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbackground"
+                android:gravity="center"
+                android:text="IT Equipment"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/itEquipmentEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/itEquipmentText"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="70dp"
+                android:inputType="number"
+                android:maxLength="6"
+                android:hint="$"
+                android:minEms="2"
+                android:maxLines="1" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/motorVehiclesLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/motorVehiclesText"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbackground"
+                android:gravity="center"
+                android:text="Motor Vehicles"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/motorVehiclesEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/motorVehiclesText"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="70dp"
+                android:inputType="number"
+                android:maxLength="6"
+                android:hint="$"
+                android:minEms="2"
+                android:maxLines="1" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/furnitureLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/furnitureText"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbackground"
+                android:gravity="center"
+                android:text="Furniture"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/furnitureEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/furnitureText"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="70dp"
+                android:inputType="number"
+                android:maxLength="6"
+                android:hint="$"
+                android:minEms="2"
+                android:maxLines="1" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/hotelsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/hotelsText"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbackground"
+                android:gravity="center"
+                android:text="Hotels, Restaurants"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/hotelsEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/hotelsText"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="70dp"
+                android:inputType="number"
+                android:maxLength="6"
+                android:hint="$"
+                android:minEms="2"
+                android:maxLines="1" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/educationLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/educationText"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbackground"
+                android:gravity="center"
+                android:text="Education"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/educationEditText"
+                android:layout_width="wrap_content"
+                android:minEms="2"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/educationText"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="70dp"
+                android:inputType="number"
+                android:maxLength="6"
+                android:hint="$"
+                android:maxLines="1" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/houseUsage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="Submit" />
+</RelativeLayout>
