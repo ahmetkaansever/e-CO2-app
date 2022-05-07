@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectPrimaryUsage">
         <activity
-            android:name="com.aksdev.projectsecondaryusage.MainActivity"
+            android:name="com.aksdev.projectsecondaryusage.MainPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

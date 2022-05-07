@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/purple_700"
+    android:backgroundTint="#4582D0"
+    android:scrollbarThumbHorizontal="@color/cardview_shadow_end_color"
+    android:visibility="visible"
+    tools:context=".MainPage">
+
+
+    <ImageButton
+        android:id="@+id/online"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/ic_online"
+        android:backgroundTint="#4582D0"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_online"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/news"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.306" />
+
+    <ImageButton
+        android:id="@+id/news"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/news_icon"
+        android:backgroundTint="#00D3D9E1"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_news"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/online"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/ic_home"
+        android:backgroundTint="#4582D0"
+        android:cropToPadding="false"
+
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_home"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/news"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/world"
+        app:layout_constraintVertical_bias="1.0"
+        tools:src="@drawable/ic_home" />
+
+    <ImageButton
+        android:id="@+id/usage"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:background="@drawable/dailyusage_icon"
+        android:backgroundTint="#4582D0"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_usage"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.747"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- <ImageButton
+        android:id="@+id/profile"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+
+        android:background="?android:attr/fingerprintAuthDrawable"
+        android:backgroundTint="@color/white"
+        android:drawableTint="@color/white"
+        android:foregroundTint="@color/white"
+        android:visibility="visible"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/online"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:strokeColor="@color/white" />-->
+
+
+    <ImageButton
+        android:id="@+id/gps"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#4582D0"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_gps"
+        android:visibility="visible"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.937" />
+
+    <TextView
+        android:id="@+id/quote"
+        android:layout_width="346dp"
+        android:layout_height="91dp"
+        android:fontFamily="sans-serif-black"
+        android:text="random quote"
+        android:textAlignment="center"
+        android:textSize="0.1in"
+        app:layout_constraintBottom_toTopOf="@+id/home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.277" />
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/world"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/world_gif"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <View
+        android:layout_width="400dp"
+        android:layout_height="2dp"
+        android:layout_below="@+id/profilePicture"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/quote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="400dp"
+        android:layout_height="2dp"
+
+        android:layout_above="@+id/news"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/world"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/logo"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/quote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/logo" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilePicture"
+        android:layout_width="56dp"
+        android:layout_height="57dp"
+        android:layout_centerHorizontal="true"
+        android:src="@color/teal_200"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3272C0"
+    tools:context=".DailyUsageMain">
+
+    <Button
+        android:id="@+id/buttonPrimaryUsage"
+        android:layout_width="135dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="60dp"
+        android:text="PRIMARY USAGE" />
+
+    <Button
+        android:id="@+id/buttonSecondaryUsage"
+        android:layout_width="135dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="226dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="60dp"
+        android:text="SECONDARY USAGE" />
+
+    <Button
+        android:id="@+id/buttonMonthlyCalculator"
+        android:layout_width="135dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="60dp"
+        android:text="MONTHLY CALCULATOR" />
+
+    <Button
+        android:id="@+id/buttonSolutions"
+        android:layout_width="135dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="226dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="60dp"
+        android:text="SOLUTIONS" />
+
+    <Button
+        android:id="@+id/buttonRecycle"
+        android:layout_width="135dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="60dp"
+        android:text="RECYCLE" />
+
+    <TextView
+        android:id="@+id/monthlyDisplayed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="154dp"
+        android:layout_marginTop="470dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="60dp"
+        android:text="M SCORE DISPLAY"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/monthlyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="60dp"
+        android:text="Monthly Used:"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/overallDisplayed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="158dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="60dp"
+        android:text="T SCORE DISPLAY"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/overallText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="175dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="60dp"
+        android:text="Overall Used:"
+        android:textAlignment="center" />
+
+
+</RelativeLayout>
