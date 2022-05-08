@@ -39,6 +39,20 @@ public class ProfilePage extends AppCompatActivity {
                 openAboutUs();
             }
         });
+        changePasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfilePage.this, NamePopUp.class );
+                startActivity(intent);
+            }
+        });
+        changeNameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfilePage.this, PasswordPopUp.class );
+                startActivity(intent);
+            }
+        });
 
     }
     public void openAboutUs(){

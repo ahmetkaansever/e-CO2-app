@@ -1,10 +1,10 @@
 package com.aksdev.projectsecondaryusage;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -26,15 +26,15 @@ public class MainPage extends AppCompatActivity {
     ImageButton btnHome;
     ImageButton btnUsage;
     ImageButton btnGps;
-    ImageButton btnProfile;
 
-    TextView quote = findViewById(R.id.quote);
+    de.hdodenhof.circleimageview.CircleImageView btnProfile;
+    TextView quote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
-
+        setContentView(R.layout.home_page);
+        quote = findViewById(R.id.quote);
         //“The Earth is what we all have in common.” —Wendell Berry
         //“The best way to predict the future is to create it.” ~ Alan Kay
         //“Those who have the privilege to know have the duty to act.” ~ Albert Einstein
@@ -54,12 +54,13 @@ public class MainPage extends AppCompatActivity {
         quotes.add("“Nature is not a place to visit. It is home.” ~ Gary Snyder");
         quote = findViewById(R.id.quote);
 
-        btnOnline = findViewById(R.id.online);;
+        btnOnline = findViewById(R.id.online);
         btnNews = findViewById(R.id.news);
+
         btnHome = findViewById(R.id.home);
         btnUsage = findViewById(R.id.usage);
         btnGps = findViewById(R.id.gps);
-        //btnProfile = findViewById(R.id.profile);
+        btnProfile = findViewById(R.id.profilePicture);
 
         //set quote to the randomly selected one
         currentQuote = randomQuote();
@@ -74,54 +75,54 @@ public class MainPage extends AppCompatActivity {
         btnOnline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplication(), Online.class));
-                finish();
+                Intent intOnline = new Intent(MainPage.this, Online.class);
+                startActivity(intOnline);
 
             }
         });
-        btnNews.setOnClickListener(new View.OnClickListener() {
+        /*btnNews.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //startActivity(new Intent(getApplicationInfo(), News.class));
-
+            public void onClick(View view) {
+                Intent intNews = new Intent(com.aksdev.projectsecondaryusage.MainPage.this, News.class);
+                startActivity(intNews);
             }
-        });
-
+        });*/
 
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               //startActivity(new Intent(MainPage.this, this.class)); --> why ?
-                finish();
+                Intent intHome = new Intent(MainPage.this, MainPage.class);
+                startActivity(intHome);
 
             }
         });
         btnUsage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainPage.this, DailyUsageMain.class));
-                finish();
+                Intent intUsage = new Intent(MainPage.this, DailyUsageMain.class);
+                startActivity(intUsage);
 
             }
         });
-        btnGps.setOnClickListener(new View.OnClickListener() {
+        /*btnGps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(MainPage.this, Gps.class));
-                finish();
+                Intent intGps = new Intent(MainPage.this, Gps.class);
+                startActivity(intGps);
 
             }
-        });
+        });*/
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainPage.this, ProfilePage.class));
-                finish();
+                Intent intProfile = new Intent(MainPage.this, ProfilePage.class);
+                startActivity(intProfile);
 
             }
         });
 
     }
+
 
     public String randomQuote()
     {

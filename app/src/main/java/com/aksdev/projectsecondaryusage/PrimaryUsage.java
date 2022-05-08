@@ -2,44 +2,50 @@ package com.aksdev.projectsecondaryusage;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PrimaryUsage extends AppCompatActivity {
     int[] Primerylist = new int[8];
+    private Button SaveButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primary_usage);
 
-    }
-    public void onBtnClick (View view) {
+        SaveButton = findViewById(R.id.SaveButton);
+        SaveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText hauseholdEditText =  findViewById(R.id.hauseholdEditText);
+                Primerylist[0] = Integer.parseInt(hauseholdEditText.getText().toString());
 
-        EditText hauseholdEditText =  findViewById(R.id.hauseholdEditText);
-        Primerylist[0] = Integer.parseInt(hauseholdEditText.getText().toString());
+                EditText electricityEditText =  findViewById(R.id.electricityEditText);
+                Primerylist[1] = Integer.parseInt(electricityEditText.getText().toString());
 
-        EditText electricityEditText =  findViewById(R.id.electricityEditText);
-        Primerylist[1] = Integer.parseInt(electricityEditText.getText().toString());
+                EditText naturalGasEditText =  findViewById(R.id.naturalGasEditText);
+                Primerylist[2] = Integer.parseInt(naturalGasEditText.getText().toString());
 
-        EditText naturalGasEditText =  findViewById(R.id.naturalGasEditText);
-        Primerylist[2] = Integer.parseInt(naturalGasEditText.getText().toString());
+                EditText lpgEditText =  findViewById(R.id.lpgEditText);
+                Primerylist[3] =Integer.parseInt(lpgEditText.getText().toString());
 
-        EditText lpgEditText =  findViewById(R.id.lpgEditText);
-        Primerylist[3] =Integer.parseInt(lpgEditText.getText().toString());
+                EditText flightEditText =  findViewById(R.id.flightEditText);
+                Primerylist[4] = Integer.parseInt(flightEditText.getText().toString());
 
-        EditText flightEditText =  findViewById(R.id.flightEditText);
-        Primerylist[4] = Integer.parseInt(flightEditText.getText().toString());
+                EditText carEditText =  findViewById(R.id.carEditText);
+                Primerylist[5] = Integer.parseInt(carEditText.getText().toString());
 
-        EditText carEditText =  findViewById(R.id.carEditText);
-        Primerylist[5] = Integer.parseInt(carEditText.getText().toString());
+                EditText subwayEditText =  findViewById(R.id.subwayEditText);
+                Primerylist[6] = Integer.parseInt(subwayEditText.getText().toString());
 
-        EditText subwayEditText =  findViewById(R.id.subwayEditText);
-        Primerylist[6] = Integer.parseInt(subwayEditText.getText().toString());
+                EditText busEditText =  findViewById(R.id.busEditText);
+                Primerylist[7] = Integer.parseInt(busEditText.getText().toString());
 
-        EditText busEditText =  findViewById(R.id.busEditText);
-        Primerylist[7] = Integer.parseInt(busEditText.getText().toString());
-
+                System.out.println(calculatePrimary(Primerylist));
+            }
+        });
     }
     public int calculatePrimary(int[] primerylist){
         int result =0;
