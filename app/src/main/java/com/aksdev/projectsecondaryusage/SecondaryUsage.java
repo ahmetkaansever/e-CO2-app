@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SecondaryCalculator extends AppCompatActivity implements Calculatable {
+public class SecondaryUsage extends AppCompatActivity implements Calculatable {
     static double totalSecondaryUsage;
 
     //Coefficients
@@ -33,7 +33,7 @@ public class SecondaryCalculator extends AppCompatActivity implements Calculatab
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_secondary_calculator);
+        setContentView(R.layout.activity_secondary_usage);
         Toast.makeText(this, "Please write how much you have spent on given areas this month", Toast.LENGTH_LONG).show();
 
         //Instantiations
@@ -82,7 +82,7 @@ public class SecondaryCalculator extends AppCompatActivity implements Calculatab
                 }
 
                 calculate();
-                Toast.makeText(SecondaryCalculator.this, "Successfully submitted.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SecondaryUsage.this, "Successfully submitted.", Toast.LENGTH_SHORT).show();
                 System.out.println(totalSecondaryUsage);
             }
         });

@@ -1,11 +1,11 @@
 package com.aksdev.projectsecondaryusage;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class DailyUsageMain extends AppCompatActivity {
 
@@ -25,7 +25,7 @@ public class DailyUsageMain extends AppCompatActivity {
         buttonPrimaryUsage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intPrim = new Intent(DailyUsageMain.this, primaryUsage.class);
+                Intent intPrim = new Intent(DailyUsageMain.this, PrimaryUsage.class);
                 startActivity(intPrim);
             }
         });
@@ -33,7 +33,7 @@ public class DailyUsageMain extends AppCompatActivity {
         buttonSecondaryUsage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intSec = new Intent(DailyUsageMain.this, SecondaryCalculator.class);
+                Intent intSec = new Intent(DailyUsageMain.this, SecondaryUsage.class);
                 startActivity(intSec);
             }
         });
@@ -41,7 +41,7 @@ public class DailyUsageMain extends AppCompatActivity {
         buttonMonthlyCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intMonthly = new Intent(DailyUsageMain.this, monthlyCalculator.class);
+                Intent intMonthly = new Intent(DailyUsageMain.this, MonthlyCalculator.class);
                 startActivity(intMonthly);
             }
         });
