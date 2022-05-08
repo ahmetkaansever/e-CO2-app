@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "289741604591",
+    "project_id": "co2database",
+    "storage_bucket": "co2database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289741604591:android:fca2480777811cb313fd1a",
+        "android_client_info": {
+          "package_name": "com.aksdev.projectprimaryusage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289741604591-1painsnmjgmp1dk1jk1r6bqb13qrkpc5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdNTTlWcKKqFWlVkFTVl-d-ZLpNOljoTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289741604591-1painsnmjgmp1dk1jk1r6bqb13qrkpc5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

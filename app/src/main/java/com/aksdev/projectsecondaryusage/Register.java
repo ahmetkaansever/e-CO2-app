@@ -10,22 +10,22 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-//import com.google.android.gms.tasks.OnCompleteListener;
-//import com.google.android.gms.tasks.Task;
-//import com.google.firebase.auth.AuthResult;
-//import com.google.firebase.auth.FirebaseAuth;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
 public class Register extends AppCompatActivity {
     //Data Pass
-    public static final String EXTRA_USERNAME = "com.example.firebase.EXTRA_USERNAME";
-    public static final String EXTRA_MAIL= "com.example.firebase.EXTRA_MAIL";
-    public static final String EXTRA_PASSWORD= "com.example.firebase.EXTRA_PASSWORD";
+    public static final String EXTRA_USERNAME = "com.aksdev.projectsecondaryusage.EXTRA_USERNAME";
+    public static final String EXTRA_MAIL= "com.aksdev.projectsecondaryusage.EXTRA_MAIL";
+    public static final String EXTRA_PASSWORD= "com.aksdev.projectsecondaryusage.EXTRA_PASSWORD";
 
     //FireBase auth object --> ( DataBase )
-    //private FirebaseAuth auth;
-    // Register Button
+    private FirebaseAuth auth;
+    Register Button;
     private Button registerPageBtn;
 
     //EdiT Text

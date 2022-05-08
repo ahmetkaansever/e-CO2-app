@@ -1,13 +1,24 @@
 package com.aksdev.projectsecondaryusage;
 
+import android.net.Uri;
+
 public class User {
     String name;
     String userName;
     String email;
     String profileColor;
+    String password;
+    Uri picture;
+
+    public User(String name, String sirname, String userName, String email, String password , Uri picture ){
+        this.name = name +" "+sirname;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.picture = picture;
+    }
 
     Solutions solution;
-
     double gasEmission;
     double motorEmission;
     double nutritionEmission;

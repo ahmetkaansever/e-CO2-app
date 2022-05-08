@@ -15,14 +15,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-//import com.google.android.gms.tasks.OnFailureListener;
-//import com.google.android.gms.tasks.OnSuccessListener;
-//import com.google.firebase.auth.FirebaseAuth;
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
-//import com.google.firebase.storage.FirebaseStorage;
-//import com.google.firebase.storage.StorageReference;
-//import com.google.firebase.storage.UploadTask;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
 //import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
@@ -52,16 +53,16 @@ public class RegisterProfile extends AppCompatActivity {
     private Button ProfileDetailsArchiveBtn;
 
     //FireBase Image Upload / References
-    //private StorageReference storageRef;
-   // private DatabaseReference dataRef;
+    private StorageReference storageRef;
+    private DatabaseReference dataRef;
 
     //FireBase User register / References
-    //final private FirebaseDatabase firebaseDatabaseReg = FirebaseDatabase.getInstance();
-    //public DatabaseReference dataUserRef = firebaseDatabaseReg.getReference("server/saving-data/fireblog");
-    // private StorageTask uploadImageTask; --> if only once is allowed
+    final private FirebaseDatabase firebaseDatabaseReg = FirebaseDatabase.getInstance();
+    public DatabaseReference dataUserRef = firebaseDatabaseReg.getReference("server/saving-data/fireblog");
+    //private StorageTask uploadImageTask; --> if only once is allowed
 
     //FireBase auth object --> ( DataBase )
-    //private FirebaseAuth authRegProf;
+    private FirebaseAuth authRegProf;
 
     static int uploadCounter = 0;
     @Override
@@ -79,11 +80,11 @@ public class RegisterProfile extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
 
         //FireBase Image References
-        //storageRef = FirebaseStorage.getInstance().getReference("Profile_Picture_DataBase");
-       // dataRef = FirebaseDatabase.getInstance().getReference("Profile_Picture_DataBase");
+        storageRef = FirebaseStorage.getInstance().getReference("Profile_Picture_DataBase");
+        dataRef = FirebaseDatabase.getInstance().getReference("Profile_Picture_DataBase");
 
         //FireBase User authentication reference
-        //authRegProf = FirebaseAuth.getInstance();
+        authRegProf = FirebaseAuth.getInstance();
 
         RegisterProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,8 +99,8 @@ public class RegisterProfile extends AppCompatActivity {
                  */
                 //UploadImage();
                 UploadUser();
-               //Intent intent = new Intent(RegisterProfile.this, com.example.FirebaseEnhanced.RegisterActivity.class );
-                //startActivity(intent);
+                Intent intent = new Intent(RegisterProfile.this, Register.class );
+                startActivity(intent);
                 finish();
             }
         });
@@ -113,21 +114,20 @@ public class RegisterProfile extends AppCompatActivity {
     }
     //User
     private void UploadUser() {
-
         Intent intent = getIntent();
-            //String username = intent.getStringExtra(com.example.FirebaseEnhanced.RegisterActivity.EXTRA_USERNAME);
-           // String password = intent.getStringExtra(com.example.FirebaseEnhanced.RegisterActivity.EXTRA_PASSWORD);
-           // String mail = intent.getStringExtra(com.example.FirebaseEnhanced.RegisterActivity.EXTRA_MAIL);
-      //  User user = new User(getProfileDetailsNameRegProfile(), getProfileDetailsSirnameRegProfile(), username, password, mail ,getImageRegProfile());
+            String username = intent.getStringExtra(com.aksdev.projectsecondaryusage.Register.EXTRA_USERNAME);
+            String password = intent.getStringExtra(com.aksdev.projectsecondaryusage.Register.EXTRA_PASSWORD);
+            String mail = intent.getStringExtra(com.aksdev.projectsecondaryusage.Register.EXTRA_MAIL);
+            User user = new User(getProfileDetailsNameRegProfile(), getProfileDetailsSirnameRegProfile(), username, password, mail ,getImageRegProfile());
 
         //FireBase User register References
-       // DatabaseReference userRef =  dataUserRef.child("Users");
+        DatabaseReference userRef =  dataUserRef.child("Users");
         HashMap<String, User> userList = new HashMap<>();
             //Dynamic Renaming
             String userId = "user" + uploadCounter;
-          //  userList.put(userId,user);
-       // userRef.setValue(userList);
-       // userRef.push();
+            userList.put(userId,user);
+            userRef.setValue(userList);
+            userRef.push();
     }
     // User
 
@@ -141,7 +141,6 @@ public class RegisterProfile extends AppCompatActivity {
     // Ouside Source https://firebase.google.com/docs/reference/android/com/google/firebase/storage/StorageReference
     // https://gist.github.com/codinginflow/afbbb9060cdd9898bdef2c554844e5f4
     private void UploadImage() {
-        /*
       //  if(image != null){
         StorageReference newStorageRef = storageRef.child(System.currentTimeMillis() + "." + getImageExt(image));
         // uploadImageTask =  --> if only once is allowed
@@ -169,16 +168,13 @@ public class RegisterProfile extends AppCompatActivity {
        // Toast.makeText(RegisterProfile.this, "Select a image for profile picture ", Toast.LENGTH_SHORT).show();
        //  }
 
-         */
     }
-
     private void archiveChooser() {
         Intent archive = new Intent();
         archive.setType("image/*");
         archive.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(archive,IMAGE_REQUEST);
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -194,7 +190,6 @@ public class RegisterProfile extends AppCompatActivity {
         }
     }
     //Image
-
 }
 
 
