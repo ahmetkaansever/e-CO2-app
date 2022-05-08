@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondaryCalculator"
+    tools:context=".SecondaryUsage"
     android:background="#546ECD">
 
     <TextView
@@ -56,11 +56,11 @@
                 android:layout_alignBaseline="@+id/nutritionText"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="70dp"
+                android:hint="$"
                 android:inputType="numberDecimal"
                 android:maxLength="6"
-                android:minEms="2"
-                android:hint="$"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:minEms="2" />
         </RelativeLayout>
 
         <RelativeLayout

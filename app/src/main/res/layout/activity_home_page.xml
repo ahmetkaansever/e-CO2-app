@@ -17,13 +17,13 @@
         android:id="@+id/online"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/ic_online"
+        android:background="@drawable/online_icon"
         android:backgroundTint="#4582D0"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_online"
+        android:src="@drawable/online_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/news"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
         app:layout_constraintVertical_bias="0.306" />
@@ -36,7 +36,7 @@
         android:background="@drawable/news_icon"
         android:backgroundTint="#00D3D9E1"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_news"
+        android:src="@drawable/news_icon"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/online"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,12 +49,12 @@
         android:layout_height="70dp"
         android:layout_marginTop="24dp"
         android:adjustViewBounds="false"
-        android:background="@drawable/ic_home"
+        android:background="@drawable/home_icon"
         android:backgroundTint="#4582D0"
         android:cropToPadding="false"
 
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_home"
+        android:src="@drawable/home_icon"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/news"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,21 +62,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/world"
         app:layout_constraintVertical_bias="1.0"
-        tools:src="@drawable/ic_home" />
-
-    <ImageButton
-        android:id="@+id/usage"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:background="@drawable/dailyusage_icon"
-        android:backgroundTint="#4582D0"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_usage"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.747"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:src="@drawable/home_icon" />
 
     <!-- <ImageButton
         android:id="@+id/profile"
@@ -100,20 +86,34 @@
 
 
     <ImageButton
+        android:id="@+id/usage"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:background="@drawable/dailyusage_icon"
+        android:backgroundTint="#4582D0"
+        android:scaleType="fitCenter"
+        android:src="@drawable/dailyusage_icon"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
         android:id="@+id/gps"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:backgroundTint="#4582D0"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_gps"
+        android:src="@drawable/gps_icon"
         android:visibility="visible"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.937" />
+        app:layout_constraintVertical_bias="0.929" />
 
     <TextView
         android:id="@+id/quote"

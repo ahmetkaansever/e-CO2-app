@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#546ECD"
+    android:layout_height="match_parent"
+    tools:context="PrimaryUsage"
+    tools:layout_editor_absoluteX="2dp"
+    tools:layout_editor_absoluteY="174dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/flightEditText"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="$"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/carEditText"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/subwayTitle"
+            android:background="@drawable/roundbackground"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="8dp"
+            android:text="Subway : "
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toTopOf="@+id/busTitle"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/subwayEditText"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="20dp"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:hint="$"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/busEditText"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/carTitle"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/roundbackground"
+            android:text="Car "
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toTopOf="@+id/subwayTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Car :" />
+
+        <TextView
+            android:id="@+id/busTitle"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/roundbackground"
+            android:text="Bus :"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Bus :" />
+
+        <TextView
+            android:id="@+id/flightTitle"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/roundbackground"
+            android:text="Flights (miles) :"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toTopOf="@+id/carTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Flights (miles) :" />
+
+        <EditText
+            android:id="@+id/carEditText"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:hint="$"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/subwayEditText"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/busEditText"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:textSize="20dp"
+            android:layout_marginEnd="48dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:hint="$"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/primaryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Primary Usage"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.07" />
+
+        <EditText
+            android:id="@+id/electricityEditText"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="48dp"
+            android:ems="10"
+            android:hint="$"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/electricityTitle"
+            app:layout_constraintTop_toBottomOf="@+id/hauseholdEditText" />
+
+        <TextView
+            android:id="@+id/naturalGasTitle"
+            android:layout_width="150dp"
+            android:textColor="@color/black"
+            android:layout_height="48dp"
+            android:background="@drawable/roundbackground"
+            android:textSize="20dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="8dp"
+            android:text="Natural Gas :"
+            app:layout_constraintBottom_toTopOf="@+id/lpgTitle"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/naturalGasEditText"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="$"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/lpgEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/naturalGasTitle"
+            app:layout_constraintTop_toBottomOf="@+id/electricityEditText"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/hauseholdTitle"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/roundbackground"
+            android:text="Hausehold : "
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toTopOf="@+id/electricityTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/primaryTitle"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/electricityTitle"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/roundbackground"
+            android:text="Electricity : "
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toTopOf="@+id/naturalGasTitle"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/lpgEditText"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="252dp"
+            android:ems="10"
+            android:hint="$"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/lpgTitle" />
+
+        <TextView
+            android:id="@+id/lpgTitle"
+            android:textSize="19sp"
+            android:layout_width="150dp"
+            android:textColor="@color/black"
+            android:layout_height="48dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginBottom="252dp"
+            android:background="@drawable/roundbackground"
+            android:text="LPG : "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <EditText
+            android:id="@+id/hauseholdEditText"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="48dp"
+            android:ems="10"
+            android:hint="$"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/hauseholdTitle"
+            app:layout_constraintTop_toBottomOf="@+id/primaryTitle" />
+
+        <Button
+            android:id="@+id/SaveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:clickable="true"
+
+            android:onClick="onBtnClick"
+            android:text="Enter"
+            android:textColor="@color/black"
+
+            app:layout_constraintBottom_toTopOf="@+id/hauseholdTitle"
+            app:layout_constraintEnd_toStartOf="@+id/primaryTitle"
+            app:layout_constraintHorizontal_bias="0.627"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.757" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
