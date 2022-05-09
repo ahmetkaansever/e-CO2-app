@@ -101,6 +101,8 @@ public class RegisterProfile extends AppCompatActivity {
                  */
                 //UploadImage();
                 UploadUser();
+                Intent intReg = new Intent(RegisterProfile.this, LogIn.class );
+                startActivity(intReg);
                 finish();
             }
         });
@@ -123,13 +125,12 @@ public class RegisterProfile extends AppCompatActivity {
 
         //FireBase User register References
         DatabaseReference userRef =  dataUserRef.child("Users");
-        DatabaseReference newUserRef = userRef.push();
+        DatabaseReference newUserRef = userRef.child(username);
             HashMap<String, User> userList = new HashMap<>();
-            userList.put("User : ", user);
+            //List with userNames
+            userList.put( "User Data:" , user);
             newUserRef.setValue(userList);
             dataUserRef.setValue(newUserRef);
-        Intent intReg = new Intent(RegisterProfile.this, Register.class );
-        startActivity(intReg);
 
     }
     // User

@@ -6,10 +6,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class PrimaryUsage extends AppCompatActivity implements Calculatable{
     static int totalPrimaryUsage;
+
+    //FireBase references
+    final FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
+    DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("eC02_DataBase");
+    String userId =   Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
+    DatabaseReference updateUserDataBaseRef = userDataBaseRef.child("Users").child(userId);
 
     int[] Primerylist = new int[8];
     private Button SaveButton;
@@ -87,8 +103,21 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                     Primerylist[7] = Integer.parseInt(busEditText.getText().toString());
                 }
 
-                System.out.println(totalPrimaryUsage);
-                Toast.makeText(PrimaryUsage.this, "Successfully submitted.", Toast.LENGTH_SHORT).show();
+                userDataBaseRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        User currentUser = snapshot.getValue(User.class);
+                        currentUser.totalPrimaryEmission += totalPrimaryUsage;
+                        updateUserDataBaseRef.setValue(currentUser);
+                        System.out.println(totalPrimaryUsage);
+                        Toast.makeText(PrimaryUsage.this, "Successfully submitted.", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
     }

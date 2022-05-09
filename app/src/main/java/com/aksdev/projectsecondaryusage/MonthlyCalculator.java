@@ -5,14 +5,30 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class MonthlyCalculator extends AppCompatActivity implements Calculatable{
-//private TextView dateText = findViewById(R.id.dateText);  // Display current date
-private TextView dateText;
+    static double totalCalEmision;
+    //private TextView dateText = findViewById(R.id.dateText);  // Display current date
+    private TextView dateText;
+
+    //FireBase references
+    final FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
+    DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("eC02_DataBase");
+    String userId =   Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
+    DatabaseReference updateUserDataBaseRef = userDataBaseRef.child("Users").child(userId);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +72,26 @@ private TextView dateText;
         else{
             Toast.makeText(MonthlyCalculator.this, "Please Enter Valid Values", Toast.LENGTH_LONG);
         }
-    }
+        //Monthly calculate object
+        calculate();
 
+    }
     @Override
     public void calculate() {
-        // Firebase addition
+        userDataBaseRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User currentUser = snapshot.getValue(User.class);
+                currentUser.totalEmission += currentUser.totalPrimaryEmission + currentUser.totalSecondaryEmission;
+                totalCalEmision = currentUser.totalPrimaryEmission + currentUser.totalSecondaryEmission;
+                updateUserDataBaseRef.setValue(currentUser);
+                Toast.makeText(MonthlyCalculator.this, "Successfully submitted.", Toast.LENGTH_SHORT).show();
+                System.out.println(totalCalEmision);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
     }
 }
