@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aksdev.projectsecondaryusage">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -28,13 +27,7 @@
             android:value="AIzaSyCwy-fLdIudzheY38fDLlwvXqYbiCAdwJw" />
 
         <activity
-            android:name=".MainPage"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name=".MainPage">
         </activity>
         <activity android:name=".DailyUsageMain" />
         <activity android:name=".ProfilePage" />
@@ -44,8 +37,14 @@
         <activity android:name=".AboutUs" />
         <activity android:name=".Recycle" />
         <activity android:name=".Register" />
-        <activity android:name=".Online" />
-        <activity android:name=".RegisterProfile" />
+        <activity android:name=".Online"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".NamePopUp" />
         <activity android:name=".LogIn" />
         <activity android:name=".PasswordPopUp" />

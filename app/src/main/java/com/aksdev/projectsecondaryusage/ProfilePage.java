@@ -21,6 +21,7 @@ public class ProfilePage extends AppCompatActivity {
         score = findViewById(R.id.scoreText);
         rank = findViewById(R.id.rankTextView);
 
+        changeNameButton = findViewById(R.id.changeNameButton);
         changePasswordButton = findViewById(R.id.changePasswordButton);
         changePasswordButton = findViewById(R.id.changeNameButton);
         aboutUsButton = findViewById(R.id.aboutUsButton);

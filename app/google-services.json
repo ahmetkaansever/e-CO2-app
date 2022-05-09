@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "289741604591",
+    "firebase_url": "https://co2database-default-rtdb.firebaseio.com",
     "project_id": "co2database",
     "storage_bucket": "co2database.appspot.com"
   },

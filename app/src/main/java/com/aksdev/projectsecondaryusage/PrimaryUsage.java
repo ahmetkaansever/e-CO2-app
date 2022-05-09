@@ -21,11 +21,6 @@ import java.util.Objects;
 public class PrimaryUsage extends AppCompatActivity implements Calculatable{
     static int totalPrimaryUsage;
 
-    //FireBase references
-    final FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
-    DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("eC02_DataBase");
-    String userId =   Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
-    DatabaseReference updateUserDataBaseRef = userDataBaseRef.child("Users").child(userId);
 
     int[] Primerylist = new int[8];
     private Button SaveButton;
@@ -34,6 +29,11 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primary_usage);
         Toast.makeText(this, "Please write how much you have spent on given areas this month", Toast.LENGTH_LONG).show();
+
+        FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
+        DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("eC02_DataBase");
+        String userId =   Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
+        DatabaseReference updateUserDataBaseRef = userDataBaseRef.child("Users").child(userId);
 
         SaveButton = findViewById(R.id.SaveButton);
         SaveButton.setOnClickListener(new View.OnClickListener() {

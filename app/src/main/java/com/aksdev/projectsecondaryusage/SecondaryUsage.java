@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,17 +42,32 @@ public class SecondaryUsage extends AppCompatActivity implements Calculatable {
     //Declaration of Buttons
     Button submitButton;
 
-    //FireBase references
-    final FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
-    DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("eC02_DataBase");
-    String userId =   Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
-    DatabaseReference updateUserDataBaseRef = userDataBaseRef.child("Users").child(userId);
+    DatabaseReference updateUserDataBaseRef;
+    String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_secondary_usage);
         Toast.makeText(this, "Please write how much you have spent on given areas this month", Toast.LENGTH_LONG).show();
+
+        //FireBase references
+        FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
+        DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("eC02_DataBase");
+        FirebaseAuth userAuth = FirebaseAuth.getInstance();
+
+        if(!Objects.isNull(userAuth)){
+            FirebaseUser firebaseUser = userAuth.getCurrentUser();
+            if(!Objects.isNull(firebaseUser)){
+                String userId = firebaseUser.getDisplayName();
+            }
+        }
+        if(!Objects.isNull(userId)){
+            updateUserDataBaseRef = userDataBaseRef.child("Users").child(userId);
+        }
+        else{
+            updateUserDataBaseRef = null;
+        }
 
         //Instantiations
         nutritionEditText = findViewById(R.id.nutritionEditText);

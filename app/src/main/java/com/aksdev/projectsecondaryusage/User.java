@@ -7,7 +7,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class User  {
-    String name;
     String userName;
     String email;
     String profileColor;
@@ -17,18 +16,13 @@ public class User  {
     String password;
     Uri picture;
 
-    public User(String name, String sirname, String userName, String email, String password , Uri picture ){
-        this.name = name +" "+sirname;
+    public User( String userName, String email){
         this.userName = userName;
         this.email = email;
-        this.password = password;
-        this.picture = picture;
-
-
     }
+    public User(){}
     //Firebase references
-    final FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
-    DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("eC02_DataBase");
+
 
     Solutions solution;
     double gasEmission;
@@ -82,10 +76,6 @@ public class User  {
         return password;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public String getUserName() {
         return userName;
     }
@@ -122,14 +112,13 @@ public class User  {
     public void setScore(int s){
         score += s;
     }
-    public void setName(String name) {
-        this.name = name;
+
+    public void setUserName(String name){
+        this.userName = name;
     }
+
     public void setPassword(String password) {
         this.password = password;
-    }
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public void setEmail(String email) {
