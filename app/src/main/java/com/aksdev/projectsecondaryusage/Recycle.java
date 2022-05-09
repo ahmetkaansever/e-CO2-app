@@ -16,6 +16,8 @@ public class Recycle extends AppCompatActivity {
     private final int battery=10;
     private final int clothes=6;
     
+    User user = new User();
+    
     private int totalScore;
     private int paperAmount, plasticAmount, glassAmount, oilAmount, batteryAmount,clothesAmount;
 
@@ -56,14 +58,18 @@ public class Recycle extends AppCompatActivity {
         //number.setText(calculateScore());
         
         //ACTUAL METHOD WITH USER CLASS
-        //user.IncrementScore(calculateScore());
+        user.setScore(calculateScore());
     }
 
     public int calculateScore()
     {
-        totalScore = paperAmount*paper + plasticAmount*plastic + glassAmount*glass + oilAmount*oil + batteryAmount*battery + clothesAmount*clothes;
-        System.out.println("offffffffff \n" + totalScore);
-        return totalScore;
+        if(paperInput != null || plasticInput != null || glassInput != null || oilInput != null || batteryInput != null || clothesInput != null)
+        {
+            totalScore = paperAmount*paper + plasticAmount*plastic + glassAmount*glass + oilAmount*oil + batteryAmount*battery + clothesAmount*clothes;
+            System.out.println("offffffffff \n" + totalScore);
+            return totalScore;
+        }
+        return 0;
     }
 
 
