@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class DailyUsageMain extends AppCompatActivity {
 
     Button button;
-    TextView overallDisplay;
+    static TextView overallDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class DailyUsageMain extends AppCompatActivity {
         setContentView(R.layout.activity_main_primary_usage);
 
         overallDisplay = findViewById(R.id.overallDisplayed);
+        overallDisplay.setText((SecondaryUsage.totalSecondaryUsage + PrimaryUsage.total) + "");
 
         Button buttonPrimaryUsage = findViewById(R.id.buttonPrimaryUsage);
         Button buttonSecondaryUsage = findViewById(R.id.buttonSecondaryUsage);

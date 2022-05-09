@@ -39,6 +39,9 @@
 
         <activity android:name=".Recycle">
         </activity>
+
+        <activity android:name=".Solutions">
+        </activity>
     </application>
 
 </manifest>
