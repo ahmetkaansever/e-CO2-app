@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -21,12 +22,14 @@ public class Recycle extends AppCompatActivity {
     private int totalScore;
     private int paperAmount, plasticAmount, glassAmount, oilAmount, batteryAmount,clothesAmount;
 
+ 
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycle);
-        //Button submit = findViewById(R.id.button);
+        Button submit = findViewById(R.id.button);
         //submit.setOnClickListener(onBtnClick());
 
     }
@@ -38,6 +41,7 @@ public class Recycle extends AppCompatActivity {
         EditText glassInput = findViewById(R.id.glassInput);
         EditText oilInput = findViewById(R.id.oilInput);
         EditText batteryInput = findViewById(R.id.batteryInput);
+
         EditText clothesInput = findViewById(R.id.clothesInput);
 
         if(paperInput != null)
@@ -80,6 +84,7 @@ public class Recycle extends AppCompatActivity {
         
         //ACTUAL METHOD WITH USER CLASS
         user.setScore(calculateScore());
+
     }
 
     public int calculateScore()

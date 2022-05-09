@@ -196,7 +196,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/roundbackground"
-            android:text="Hausehold : "
+            android:text="Household : "
             android:textColor="@color/black"
             android:textSize="19sp"
             app:layout_constraintBottom_toTopOf="@+id/electricityTitle"

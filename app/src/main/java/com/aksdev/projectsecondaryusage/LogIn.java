@@ -7,14 +7,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
-//import com.google.android.gms.tasks.OnSuccessListener;
-//import com.google.firebase.auth.AuthResult;
-//import com.google.firebase.auth.FirebaseAuth;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LogIn extends AppCompatActivity {
 
-    //private FirebaseAuth auth;
+    private FirebaseAuth auth;
 
     private Button logInBtn;
     private TextView mailText;
@@ -23,7 +22,7 @@ public class LogIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-        //auth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
         mailText = findViewById(R.id.LogInMail);
         passwordText  =findViewById(R.id.LogInPassword);
 
@@ -39,7 +38,7 @@ public class LogIn extends AppCompatActivity {
     }
 
     private void logInUser(String mailString, String passwordString) {
-       /*
+
         auth.signInWithEmailAndPassword(mailString,passwordString).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
@@ -48,6 +47,6 @@ public class LogIn extends AppCompatActivity {
                 finish();
             }
         });
-        */
+
     }
 }

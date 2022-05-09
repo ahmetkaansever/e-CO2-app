@@ -104,14 +104,14 @@ public class MainPage extends AppCompatActivity {
 
             }
         });
-        /*btnGps.setOnClickListener(new View.OnClickListener() {
+        btnGps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intGps = new Intent(MainPage.this, Gps.class);
                 startActivity(intGps);
 
             }
-        });*/
+        });
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
