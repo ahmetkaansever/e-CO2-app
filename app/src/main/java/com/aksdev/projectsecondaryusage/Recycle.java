@@ -14,8 +14,10 @@ public class Recycle extends AppCompatActivity {
     private final int glass=4;
     private final int oil=8;
     private final int battery=10;
+    private final int clothes=6;
+    
     private int totalScore;
-    private int paperAmount, plasticAmount, glassAmount, oilAmount, batteryAmount;
+    private int paperAmount, plasticAmount, glassAmount, oilAmount, batteryAmount,clothesAmount;
 
 
 
@@ -36,25 +38,30 @@ public class Recycle extends AppCompatActivity {
         EditText glassInput = findViewById(R.id.glassInput);
         EditText oilInput = findViewById(R.id.oilInput);
         EditText batteryInput = findViewById(R.id.batteryInput);
+        EditText clothesInput = findViewById(R.id.clothesInput);
 
         paperAmount = Integer.parseInt(paperInput.getText().toString());
         plasticAmount = Integer.parseInt(plasticInput.getText().toString());
         glassAmount = Integer.parseInt(glassInput.getText().toString());
         oilAmount = Integer.parseInt(oilInput.getText().toString());
         batteryAmount = Integer.parseInt(batteryInput.getText().toString());
+        clothesAmount = Integer.parseInt(clothesInput.getText().toString());
 
+        //TEST
         //int n = calculateScore();
         TextView text = findViewById(R.id.textView);
         text.setText("idk");
-        calculateScore();
+        //calculateScore();
         TextView number = findViewById(R.id.editTextNumber);
-        //int n = Integer.parseInt(number.getText().toString());
         //number.setText(calculateScore());
+        
+        //ACTUAL METHOD WITH USER CLASS
+        //user.IncrementScore(calculateScore());
     }
 
     public int calculateScore()
     {
-        totalScore = paperAmount*paper + plasticAmount*plastic + glassAmount*glass + oilAmount*oil + batteryAmount*battery;
+        totalScore = paperAmount*paper + plasticAmount*plastic + glassAmount*glass + oilAmount*oil + batteryAmount*battery + clothesAmount*clothes;
         System.out.println("offffffffff \n" + totalScore);
         return totalScore;
     }
