@@ -15,8 +15,14 @@ public class Recycle extends AppCompatActivity {
     private final int glass=4;
     private final int oil=8;
     private final int battery=10;
+    private final int clothes=6;
+    
+    User user = new User();
+    
     private int totalScore;
-    private int paperAmount, plasticAmount, glassAmount, oilAmount, batteryAmount;
+    private int paperAmount, plasticAmount, glassAmount, oilAmount, batteryAmount,clothesAmount;
+
+ 
 
 
     @Override
@@ -36,27 +42,57 @@ public class Recycle extends AppCompatActivity {
         EditText oilInput = findViewById(R.id.oilInput);
         EditText batteryInput = findViewById(R.id.batteryInput);
 
-        paperAmount = Integer.parseInt(paperInput.getText().toString());
-        plasticAmount = Integer.parseInt(plasticInput.getText().toString());
-        glassAmount = Integer.parseInt(glassInput.getText().toString());
-        oilAmount = Integer.parseInt(oilInput.getText().toString());
-        batteryAmount = Integer.parseInt(batteryInput.getText().toString());
+        EditText clothesInput = findViewById(R.id.clothesInput);
 
-        int n = calculateScore();
+        if(paperInput != null)
+        {
+            paperAmount = Integer.parseInt(paperInput.getText().toString());
+        }
+        
+        if(plasticInput != null)
+        {
+            plasticAmount = Integer.parseInt(plasticInput.getText().toString());
+        }
+        
+        if(glassInput != null)
+        {
+            glassAmount = Integer.parseInt(glassInput.getText().toString());
+        }
+        
+        if(oilInput != null)
+        {
+            oilAmount = Integer.parseInt(oilInput.getText().toString());
+        }
+        
+        if(batteryInput != null)
+        {
+            batteryAmount = Integer.parseInt(batteryInput.getText().toString());
+        }
+        
+        if(clothesInput != null)
+        {
+            clothesAmount = Integer.parseInt(clothesInput.getText().toString());
+        }
+        
+        //TEST
+        //int n = calculateScore();
         TextView text = findViewById(R.id.textView);
-        calculateScore();
+        text.setText("idk");
+        //calculateScore();
         TextView number = findViewById(R.id.editTextNumber);
-        n = Integer.parseInt(number.getText().toString());
-        number.setText(calculateScore());
+        //number.setText(calculateScore());
+        
+        //ACTUAL METHOD WITH USER CLASS
+        user.setScore(calculateScore());
+
     }
 
     public int calculateScore()
     {
-        totalScore = paperAmount*paper + plasticAmount*plastic + glassAmount*glass + oilAmount*oil + batteryAmount*battery;
-        System.out.println("offffffffff \n" + totalScore);
-        return totalScore;
+            totalScore = paperAmount*paper + plasticAmount*plastic + glassAmount*glass + oilAmount*oil + batteryAmount*battery + clothesAmount*clothes;
+            System.out.println("offffffffff \n" + totalScore);
+            return totalScore;
     }
-
 
 }
 
