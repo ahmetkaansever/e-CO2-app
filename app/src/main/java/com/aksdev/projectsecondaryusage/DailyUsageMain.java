@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-//DoğaTrial
+//DoğaTrial2
 
 public class DailyUsageMain extends AppCompatActivity {
 
