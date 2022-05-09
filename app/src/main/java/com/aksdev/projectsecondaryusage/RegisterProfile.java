@@ -26,7 +26,9 @@ import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 //import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class RegisterProfile extends AppCompatActivity {
 
@@ -58,7 +60,7 @@ public class RegisterProfile extends AppCompatActivity {
 
     //FireBase User register / References
     final private FirebaseDatabase firebaseDatabaseReg = FirebaseDatabase.getInstance();
-    public DatabaseReference dataUserRef = firebaseDatabaseReg.getReference("server/saving-data/fireblog");
+    public DatabaseReference dataUserRef = firebaseDatabaseReg.getReference("eC02_DataBase");
     //private StorageTask uploadImageTask; --> if only once is allowed
 
     //FireBase auth object --> ( DataBase )
@@ -80,7 +82,7 @@ public class RegisterProfile extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
 
         //FireBase Image References
-        storageRef = FirebaseStorage.getInstance().getReference("Profile_Picture_DataBase");
+        storageRef = FirebaseStorage.getInstance().getReference("eC02_DataBase/Profile_Picture_DataBase");
         dataRef = FirebaseDatabase.getInstance().getReference("Profile_Picture_DataBase");
 
         //FireBase User authentication reference
@@ -99,8 +101,6 @@ public class RegisterProfile extends AppCompatActivity {
                  */
                 //UploadImage();
                 UploadUser();
-                Intent intent = new Intent(RegisterProfile.this, Register.class );
-                startActivity(intent);
                 finish();
             }
         });
@@ -118,19 +118,21 @@ public class RegisterProfile extends AppCompatActivity {
             String username = intent.getStringExtra(com.aksdev.projectsecondaryusage.Register.EXTRA_USERNAME);
             String password = intent.getStringExtra(com.aksdev.projectsecondaryusage.Register.EXTRA_PASSWORD);
             String mail = intent.getStringExtra(com.aksdev.projectsecondaryusage.Register.EXTRA_MAIL);
+            //New User
             User user = new User(getProfileDetailsNameRegProfile(), getProfileDetailsSirnameRegProfile(), username, password, mail ,getImageRegProfile());
 
         //FireBase User register References
         DatabaseReference userRef =  dataUserRef.child("Users");
-        HashMap<String, User> userList = new HashMap<>();
-            //Dynamic Renaming
-            String userId = "user" + uploadCounter;
-            userList.put(userId,user);
-            userRef.setValue(userList);
-            userRef.push();
+        DatabaseReference newUserRef = userRef.push();
+            HashMap<String, User> userList = new HashMap<>();
+            userList.put("User : ", user);
+            newUserRef.setValue(userList);
+            dataUserRef.setValue(newUserRef);
+        Intent intReg = new Intent(RegisterProfile.this, Register.class );
+        startActivity(intReg);
+
     }
     // User
-
     // Ouside Source https://developer.android.com/reference/android/content/ContentResolver
     private String getImageExt(Uri image){
         ContentResolver contRes = getContentResolver();

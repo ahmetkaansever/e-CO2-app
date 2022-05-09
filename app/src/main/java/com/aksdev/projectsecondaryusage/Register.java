@@ -49,7 +49,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-       // auth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
         mailEditText = findViewById(R.id.editTextTextEmailAddress);
         nameEditText = findViewById(R.id.nameEdit);
         registerPageBtn = findViewById(R.id.registerPageBtn);
@@ -80,7 +80,7 @@ public class Register extends AppCompatActivity {
         });
     }
     private void registerUser(String textMail, String textPassword, String textName) {
-       /*
+
        auth.createUserWithEmailAndPassword(textMail,textPassword).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -104,7 +104,7 @@ public class Register extends AppCompatActivity {
                 }
             }
         });
-       */
+
     }
 
 

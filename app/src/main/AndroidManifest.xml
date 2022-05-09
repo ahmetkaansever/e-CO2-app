@@ -23,7 +23,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyCwy-fLdIudzheY38fDLlwvXqYbiCAdwJw" />
 
         <activity
             android:name=".MainPage"
@@ -34,13 +34,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DailyUsageMain"></activity>
-        <activity android:name=".ProfilePage"></activity>
-        <activity android:name=".MonthlyCalculator"></activity>
-        <activity android:name=".PrimaryUsage"></activity>
-        <activity android:name=".SecondaryUsage"></activity>
-        <activity android:name=".AboutUs"></activity>
-        <activity android:name=".Recycle"></activity>
+        <activity android:name=".DailyUsageMain" />
+        <activity android:name=".ProfilePage" />
+        <activity android:name=".MonthlyCalculator" />
+        <activity android:name=".PrimaryUsage" />
+        <activity android:name=".SecondaryUsage" />
+        <activity android:name=".AboutUs" />
+        <activity android:name=".Recycle" />
+        <activity android:name=".Solutions" />
+        <activity android:name=".Register" />
+        <activity android:name=".Online" />
+        <activity android:name=".RegisterProfile" />
+        <activity android:name=".NamePopUp" />
+        <activity android:name=".LogIn" />
+        <activity android:name=".PasswordPopUp"/>
+
+
     </application>
 
 </manifest>

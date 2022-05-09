@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-public class MonthlyCalculator extends AppCompatActivity {
+public class MonthlyCalculator extends AppCompatActivity implements Calculatable{
 //private TextView dateText = findViewById(R.id.dateText);  // Display current date
 private TextView dateText;
 
@@ -56,5 +56,10 @@ private TextView dateText;
         else{
             Toast.makeText(MonthlyCalculator.this, "Please Enter Valid Values", Toast.LENGTH_LONG);
         }
+    }
+
+    @Override
+    public void calculate() {
+        // Firebase addition
     }
 }
