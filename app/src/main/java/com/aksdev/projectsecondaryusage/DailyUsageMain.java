@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+//DOĞA
 
 public class DailyUsageMain extends AppCompatActivity {
 
