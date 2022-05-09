@@ -156,6 +156,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 default: result+= 0;
                     break;
             }
+            index++;
         }
         return (int) (result * multp * 10);
     }
