@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,13 +19,11 @@ public class Recycle extends AppCompatActivity {
     private int paperAmount, plasticAmount, glassAmount, oilAmount, batteryAmount;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycle);
-        //Button submit = findViewById(R.id.button);
+        Button submit = findViewById(R.id.button);
         //submit.setOnClickListener(onBtnClick());
 
     }
@@ -43,13 +42,12 @@ public class Recycle extends AppCompatActivity {
         oilAmount = Integer.parseInt(oilInput.getText().toString());
         batteryAmount = Integer.parseInt(batteryInput.getText().toString());
 
-        //int n = calculateScore();
+        int n = calculateScore();
         TextView text = findViewById(R.id.textView);
-        text.setText("idk");
         calculateScore();
         TextView number = findViewById(R.id.editTextNumber);
-        //int n = Integer.parseInt(number.getText().toString());
-        //number.setText(calculateScore());
+        n = Integer.parseInt(number.getText().toString());
+        number.setText(calculateScore());
     }
 
     public int calculateScore()

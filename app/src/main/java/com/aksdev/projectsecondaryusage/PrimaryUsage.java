@@ -7,13 +7,12 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PrimaryUsage extends AppCompatActivity {
-    static int[] Primerylist = new int[8];
-    static int total;
+    int[] Primerylist = new int[8];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primary_usage);
-        total = calculatePrimary(Primerylist);
+
     }
     public void onBtnClick (View view) {
 
@@ -41,9 +40,8 @@ public class PrimaryUsage extends AppCompatActivity {
         EditText busEditText =  findViewById(R.id.busEditText);
         Primerylist[7] = Integer.parseInt(busEditText.getText().toString());
 
-
     }
-    public static int calculatePrimary(int[] primerylist){
+    public int calculatePrimary(int[] primerylist){
         int result =0;
         int multp = primerylist[0];
         int index = 1;
@@ -78,7 +76,6 @@ public class PrimaryUsage extends AppCompatActivity {
                 default: result+= 0;
                     break;
             }
-            index++;
         }
         return (int) (result * multp * 10);
     }
