@@ -22,8 +22,6 @@ public class Recycle extends AppCompatActivity {
     private int paperAmount, plasticAmount, glassAmount, oilAmount, batteryAmount,clothesAmount;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,13 +40,36 @@ public class Recycle extends AppCompatActivity {
         EditText batteryInput = findViewById(R.id.batteryInput);
         EditText clothesInput = findViewById(R.id.clothesInput);
 
-        paperAmount = Integer.parseInt(paperInput.getText().toString());
-        plasticAmount = Integer.parseInt(plasticInput.getText().toString());
-        glassAmount = Integer.parseInt(glassInput.getText().toString());
-        oilAmount = Integer.parseInt(oilInput.getText().toString());
-        batteryAmount = Integer.parseInt(batteryInput.getText().toString());
-        clothesAmount = Integer.parseInt(clothesInput.getText().toString());
-
+        if(paperInput != null)
+        {
+            paperAmount = Integer.parseInt(paperInput.getText().toString());
+        }
+        
+        if(plasticInput != null)
+        {
+            plasticAmount = Integer.parseInt(plasticInput.getText().toString());
+        }
+        
+        if(glassInput != null)
+        {
+            glassAmount = Integer.parseInt(glassInput.getText().toString());
+        }
+        
+        if(oilInput != null)
+        {
+            oilAmount = Integer.parseInt(oilInput.getText().toString());
+        }
+        
+        if(batteryInput != null)
+        {
+            batteryAmount = Integer.parseInt(batteryInput.getText().toString());
+        }
+        
+        if(clothesInput != null)
+        {
+            clothesAmount = Integer.parseInt(clothesInput.getText().toString());
+        }
+        
         //TEST
         //int n = calculateScore();
         TextView text = findViewById(R.id.textView);
@@ -63,15 +84,10 @@ public class Recycle extends AppCompatActivity {
 
     public int calculateScore()
     {
-        if(paperInput != null || plasticInput != null || glassInput != null || oilInput != null || batteryInput != null || clothesInput != null)
-        {
             totalScore = paperAmount*paper + plasticAmount*plastic + glassAmount*glass + oilAmount*oil + batteryAmount*battery + clothesAmount*clothes;
             System.out.println("offffffffff \n" + totalScore);
             return totalScore;
-        }
-        return 0;
     }
-
 
 }
 
