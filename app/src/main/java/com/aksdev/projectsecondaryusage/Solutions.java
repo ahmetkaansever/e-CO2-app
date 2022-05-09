@@ -59,19 +59,19 @@ public class Solutions extends AppCompatActivity {
         for (int i = 0; i < compareBooleans.length; i++) {
             compareBooleans[i] = false;
 
-            if (this.user.getGasEmisson > AVG_GAS_EMISSION) {
+            if (this.user.getGasEmission() > AVG_GAS_EMISSION) {
                 compareBooleans[0] = true;
             }
-            if (this.user.getMotorEmisson > AVG_MOTOR_EMISSION) {
+            if (this.user.getMotorEmission()> AVG_MOTOR_EMISSION) {
                 compareBooleans[1] = true;
             }
-            if (this.user.getNutritionEmission > AVG_NUTRITION_EMISSION) {
+            if (this.user.getNutritionEmission() > AVG_NUTRITION_EMISSION) {
                 compareBooleans[2] = true;
             }
-            if (this.user.getClothingEmission > AVG_CLOTHING_EMISSION) {
+            if (this.user.getClothingEmission() > AVG_CLOTHING_EMISSION) {
                 compareBooleans[3] = true;
             }
-            if (this.user.getITEmission > AVG_IT_EMISSION) {
+            if (this.user.getItEmission() > AVG_IT_EMISSION) {
                 compareBooleans[4] = true;
             }
         }
