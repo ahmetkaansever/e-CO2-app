@@ -17,7 +17,7 @@ public class Recycle extends AppCompatActivity {
     private final int battery=10;
     private final int clothes=6;
     
-    User user = new User();
+    User user;
     
     private int totalScore;
     private int paperAmount, plasticAmount, glassAmount, oilAmount, batteryAmount,clothesAmount;

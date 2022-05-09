@@ -43,7 +43,6 @@
         <activity android:name=".SecondaryUsage" />
         <activity android:name=".AboutUs" />
         <activity android:name=".Recycle" />
-        <activity android:name=".Solutions" />
         <activity android:name=".Register" />
         <activity android:name=".Online" />
         <activity android:name=".RegisterProfile" />

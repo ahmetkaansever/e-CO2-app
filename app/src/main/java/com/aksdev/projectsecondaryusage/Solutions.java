@@ -3,14 +3,15 @@ package com.aksdev.projectsecondaryusage;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class Solutions extends AppCompatActivity {
 
-    private final String[] solutionMessages = {};
     private ArrayList<TextView> solutionTextViews;
+    private View[] separatorLines;
     private boolean[] compareBooleans;
     private double worldDifferencePercentage;
     private double countryDifferencePercentage;
@@ -23,15 +24,12 @@ public class Solutions extends AppCompatActivity {
     public final double AVG_IT_EMISSION = 2.0;
     private User user;
 
-    public Solutions() {
-        solutionTextViews = new ArrayList<>();
-        compareBooleans = new boolean[5];
-    }
 
     public Solutions(User user) {
         solutionTextViews = new ArrayList<>();
         compareBooleans = new boolean[5];
         setCompareBooleans();
+        separatorLines = new View[7];
         this.user = user;
     }
     public double compareWorldAverage(){
@@ -61,19 +59,19 @@ public class Solutions extends AppCompatActivity {
         for (int i = 0; i < compareBooleans.length; i++) {
             compareBooleans[i] = false;
 
-            if (this.user.getGasEmission() > AVG_GAS_EMISSION) {
+            if (this.user.getGasEmisson > AVG_GAS_EMISSION) {
                 compareBooleans[0] = true;
             }
-            if (this.user.getMotorEmission() > AVG_MOTOR_EMISSION) {
+            if (this.user.getMotorEmisson > AVG_MOTOR_EMISSION) {
                 compareBooleans[1] = true;
             }
-            if (this.user.getNutritionEmission() > AVG_NUTRITION_EMISSION) {
+            if (this.user.getNutritionEmission > AVG_NUTRITION_EMISSION) {
                 compareBooleans[2] = true;
             }
-            if (this.user.getClothingEmission() > AVG_CLOTHING_EMISSION) {
+            if (this.user.getClothingEmission > AVG_CLOTHING_EMISSION) {
                 compareBooleans[3] = true;
             }
-            if (this.user.getItEmission() > AVG_IT_EMISSION) {
+            if (this.user.getITEmission > AVG_IT_EMISSION) {
                 compareBooleans[4] = true;
             }
         }
@@ -94,6 +92,22 @@ public class Solutions extends AppCompatActivity {
             TextView solution8 = (TextView) findViewById(R.id.solutionText8);
             TextView solution9 = (TextView) findViewById(R.id.solutionText9);
             TextView solution10 = (TextView) findViewById(R.id.solutionText10);
+
+            View line1 =  (View) findViewById(R.id.separatorLine1);
+            View line2 =  (View) findViewById(R.id.separatorLine2);
+            View line3 =  (View) findViewById(R.id.separatorLine3);
+            View line4 =  (View) findViewById(R.id.separatorLine4);
+            View line5 =  (View) findViewById(R.id.separatorLine5);
+            View line6 =  (View) findViewById(R.id.separatorLine6);
+            View line7 =  (View) findViewById(R.id.separatorLine7);
+
+            separatorLines[0] = line1;
+            separatorLines[1] = line2;
+            separatorLines[2] = line3;
+            separatorLines[3] = line4;
+            separatorLines[4] = line5;
+            separatorLines[5] = line6;
+            separatorLines[6] = line7;
 
 
             solutionTextViews.add(solution1);
@@ -153,19 +167,11 @@ public class Solutions extends AppCompatActivity {
                     a++;
                 }
 
-
-
-
             }
 
-            solution1.setText("You are % above world average carbon emission rates.");
-            solution2.setText("You are % above country average carbon emission rates.");
-            solution3.setText("Your gas usage is higher than the world average. Try turning off the heat when your not home.");
-            solution4.setText("Your car usage is higher than the world average. Try using public transportation for a change.");
-            solution5.setText("Your carbon emission rates from food usage is higher than the world average. Try avoiding prepackaged food for less contamination.");
-            solution6.setText("Your clothing purchase is higher than the world average. Try to visit thrift stores and stay away from fast fashion brands.\"");
-            solution7.setText("Your IT purchase is higher than the world average. Recycling your old devices after buying new ones might help.\"");
-
+            for (int i = 0; i < a; i++) {
+                separatorLines[i].setVisibility(View.VISIBLE);
+            }
 
 
         }
