@@ -9,24 +9,24 @@
     android:background="#4582D0">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilePicture"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
         android:src="@color/teal_200"
         app:civ_border_color="@color/white"
-        app:civ_border_width="1dp"
-        android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/profilePicture"/>
+        app:civ_border_width="1dp" />
 
     <TextView
+        android:id="@+id/rankTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rank: "
         android:layout_below="@+id/profilePicture"
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
-        android:textSize="22dp"
-        android:id="@+id/rankTextView"/>
+        android:text="Rank: "
+        android:textSize="22dp" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -44,13 +44,13 @@
             android:id="@+id/nameTextView"/>
 
         <TextView
+            android:id="@+id/nameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="name"
-            android:textSize="22dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="55dp"
-            android:id="@+id/nameText"/>
+            android:text="name"
+            android:textSize="22dp" />
 
         <View
             android:layout_width="320dp"
@@ -90,10 +90,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Score: "
             android:layout_below="@id/userNameTextView"
-            android:textSize="22dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:text="Score: "
+            android:textSize="22dp" />
 
         <TextView
             android:layout_width="wrap_content"

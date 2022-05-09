@@ -1,5 +1,6 @@
 package com.aksdev.projectsecondaryusage;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,6 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class SecondaryUsage extends AppCompatActivity implements Calculatable {
     static double totalSecondaryUsage;
@@ -30,6 +40,13 @@ public class SecondaryUsage extends AppCompatActivity implements Calculatable {
 
     //Declaration of Buttons
     Button submitButton;
+
+    //FireBase references
+    final FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
+    DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("eC02_DataBase");
+    String userId =   Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
+    DatabaseReference updateUserDataBaseRef = userDataBaseRef.child("Users").child(userId);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,8 +99,23 @@ public class SecondaryUsage extends AppCompatActivity implements Calculatable {
                 }
 
                 calculate();
-                Toast.makeText(SecondaryUsage.this, "Successfully submitted.", Toast.LENGTH_SHORT).show();
-                DailyUsageMain.overallDisplay.setText((SecondaryUsage.totalSecondaryUsage + PrimaryUsage.total) + "");
+              userDataBaseRef.addValueEventListener(new ValueEventListener() {
+                  @Override
+                  public void onDataChange(@NonNull DataSnapshot snapshot) {
+                      User currentUser = snapshot.getValue(User.class);
+                      currentUser.totalSecondaryEmission += totalSecondaryUsage;
+                      updateUserDataBaseRef.setValue(currentUser);
+                      Toast.makeText(SecondaryUsage.this, "Successfully submitted.", Toast.LENGTH_SHORT).show();
+                      System.out.println(totalSecondaryUsage);
+                  }
+
+                  @Override
+                  public void onCancelled(@NonNull DatabaseError error) {
+
+                  }
+              });
+
+
             }
         });
     }

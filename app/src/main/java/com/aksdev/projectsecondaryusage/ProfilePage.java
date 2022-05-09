@@ -16,7 +16,6 @@ public class ProfilePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_profile_layout);
-
         name = findViewById(R.id.nameText);
         userName = findViewById(R.id.userNameText);
         score = findViewById(R.id.scoreText);
@@ -26,13 +25,14 @@ public class ProfilePage extends AppCompatActivity {
         changePasswordButton = findViewById(R.id.changeNameButton);
         aboutUsButton = findViewById(R.id.aboutUsButton);
         profilePicture = findViewById(R.id.profilePicture);
-
         profilePicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
+
+
         aboutUsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

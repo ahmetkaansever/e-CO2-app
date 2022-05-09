@@ -39,12 +39,14 @@ public class LogIn extends AppCompatActivity {
 
     private void logInUser(String mailString, String passwordString) {
 
+        startActivity(new Intent(LogIn.this, ProfilePage.class));
+        finish();
+
         auth.signInWithEmailAndPassword(mailString,passwordString).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(LogIn.this,"Loged In", Toast.LENGTH_LONG);
-                startActivity(new Intent(LogIn.this, MainPage.class));
-                finish();
+
             }
         });
 
