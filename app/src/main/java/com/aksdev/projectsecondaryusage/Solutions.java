@@ -1,14 +1,36 @@
 package com.aksdev.projectsecondaryusage;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class Solutions extends AppCompatActivity {
+
+    static User user;
+
+    private FirebaseAuth auth;
+    private FirebaseUser userfir;
+    private DatabaseReference referance;
+    private String userID;
+
+    private Button logInBtn;
+    private TextView mailText;
+    private TextView passwordText;
 
     private ArrayList<TextView> solutionTextViews;
     private View[] separatorLines;
@@ -22,16 +44,14 @@ public class Solutions extends AppCompatActivity {
     public final double AVG_NUTRITION_EMISSION = 0.18;
     public final double AVG_CLOTHING_EMISSION = 0.8;
     public final double AVG_IT_EMISSION = 2.0;
-    private User user;
 
-
-    public Solutions() {
+    /*public Solutions() {
         solutionTextViews = new ArrayList<>();
         compareBooleans = new boolean[5];
         setCompareBooleans();
         separatorLines = new View[7];
-        this.user = user;
-    }
+        this.user = (User)getIntent().getSerializableExtra("currentUser");
+    }*/
     public double compareWorldAverage(){
 
         if (this.user.getTotalEmission() >= WORLD_AVERAGE) {
@@ -59,10 +79,10 @@ public class Solutions extends AppCompatActivity {
         for (int i = 0; i < compareBooleans.length; i++) {
             compareBooleans[i] = false;
 
-            if (this.user.getGasEmission() > AVG_GAS_EMISSION) {
+            if (user.getGasEmission() > AVG_GAS_EMISSION) {
                 compareBooleans[0] = true;
             }
-            if (this.user.getMotorEmission()> AVG_MOTOR_EMISSION) {
+            if (user.getMotorEmission()> AVG_MOTOR_EMISSION) {
                 compareBooleans[1] = true;
             }
             if (this.user.getNutritionEmission() > AVG_NUTRITION_EMISSION) {
@@ -81,6 +101,39 @@ public class Solutions extends AppCompatActivity {
         protected void onCreate (Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_solutions);
+
+            user = LogIn.userProfile;
+
+            userfir = FirebaseAuth.getInstance().getCurrentUser();
+            referance = FirebaseDatabase.getInstance().getReference("Users");
+            userID = userfir.getUid();
+            System.out.println("test");
+
+            referance.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    System.out.println("test1");
+                    user = snapshot.getValue(User.class);
+                    if(user != null){
+                        System.out.println("not null anymore");
+                    }
+                    System.out.println(userfir.getUid());
+                    System.out.println(user);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    System.out.println("test2");
+                }
+            });
+
+            //user = (User)getIntent().getSerializableExtra("currentUser");
+
+            solutionTextViews = new ArrayList<>();
+            compareBooleans = new boolean[5];
+            setCompareBooleans();
+            separatorLines = new View[7];
+
 
             TextView solution1 = (TextView) findViewById(R.id.solutionText1);
             TextView solution2 = (TextView) findViewById(R.id.solutionText2);

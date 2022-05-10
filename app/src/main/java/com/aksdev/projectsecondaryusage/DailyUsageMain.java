@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DailyUsageMain extends AppCompatActivity {
 
+    User userProfile;
     Button button;
     static TextView secondaryDisplay;
     static TextView primaryDisplay;
@@ -19,6 +20,8 @@ public class DailyUsageMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_primary_usage);
+
+        userProfile = (User)getIntent().getSerializableExtra("currentUser");
 
         primaryDisplay = findViewById(R.id.primaryDisplay);
         secondaryDisplay = findViewById(R.id.secondaryDisplayed);
@@ -58,6 +61,7 @@ public class DailyUsageMain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intSol = new Intent(DailyUsageMain.this, Solutions.class);
+                intSol.putExtra("currentUser", userProfile);
                 startActivity(intSol);
             }
         });

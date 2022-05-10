@@ -6,17 +6,20 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class User  {
+import java.io.Serializable;
+
+public class User implements Serializable{
     String userName;
     String email;
     int score;
     Solutions mySolutions;
 
 
-    public User( String userName, String email){
+    public User ( String userName, String email){
         this.userName = userName;
         this.email = email;
         mySolutions = new Solutions();
+
     }
     public User(){}
     //Firebase references

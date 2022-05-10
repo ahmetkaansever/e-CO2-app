@@ -20,7 +20,7 @@ import java.util.Objects;
 
 public class PrimaryUsage extends AppCompatActivity implements Calculatable{
     static int totalPrimaryUsage;
-
+    User user;
 
     int[] Primerylist = new int[8];
     private Button SaveButton;

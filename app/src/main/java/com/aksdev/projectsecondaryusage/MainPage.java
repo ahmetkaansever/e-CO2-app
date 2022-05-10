@@ -16,6 +16,7 @@ import java.util.Random;
 
 public class MainPage extends AppCompatActivity {
 
+    User userProfile;
 
     private ArrayList<String> quotes = new ArrayList<>();
     private String currentQuote;
@@ -34,6 +35,9 @@ public class MainPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
+
+        userProfile = (User) getIntent().getSerializableExtra("currentUser");
+
         quote = findViewById(R.id.quote);
         //“The Earth is what we all have in common.” —Wendell Berry
         //“The best way to predict the future is to create it.” ~ Alan Kay
@@ -100,6 +104,7 @@ public class MainPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intUsage = new Intent(MainPage.this, DailyUsageMain.class);
+                intUsage.putExtra("currentUser", userProfile);
                 startActivity(intUsage);
 
             }
