@@ -9,30 +9,28 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ProfilePage extends AppCompatActivity {
-    TextView name, userName, score, rank;
+    static TextView userName, score, rank;
     Button changePasswordButton, changeNameButton, aboutUsButton;
     de.hdodenhof.circleimageview.CircleImageView profilePicture;
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_profile_layout);
-        name = findViewById(R.id.nameText);
+
         userName = findViewById(R.id.userNameText);
         score = findViewById(R.id.scoreText);
         rank = findViewById(R.id.rankTextView);
 
         changeNameButton = findViewById(R.id.changeNameButton);
         changePasswordButton = findViewById(R.id.changePasswordButton);
-        changePasswordButton = findViewById(R.id.changeNameButton);
         aboutUsButton = findViewById(R.id.aboutUsButton);
         profilePicture = findViewById(R.id.profilePicture);
-        profilePicture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
+        user = LogIn.userProfile;
 
+        userName.setText(user.getUserName() + "");
+        score.setText(user.getScore() + "");
 
         aboutUsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,14 +41,15 @@ public class ProfilePage extends AppCompatActivity {
         changePasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProfilePage.this, NamePopUp.class );
+                Intent intent = new Intent(ProfilePage.this, passwordPopUp.class );
                 startActivity(intent);
             }
         });
         changeNameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(ProfilePage.this, NamePopUp.class);
+                startActivity(intent);
             }
         });
 

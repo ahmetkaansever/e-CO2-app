@@ -36,26 +36,10 @@
         android:id="@+id/informationLayout"
         android:layout_marginLeft="45dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name: "
-            android:textSize="22dp"
-            android:id="@+id/nameTextView"/>
-
-        <TextView
-            android:id="@+id/nameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="55dp"
-            android:text="name"
-            android:textSize="22dp" />
 
         <View
             android:layout_width="320dp"
             android:layout_height="2dp"
-            android:layout_below="@+id/nameTextView"
             android:layout_marginTop="5dp"
             android:background="#272222"/>
 
@@ -64,7 +48,6 @@
             android:layout_height="wrap_content"
             android:text="Username: "
             android:textSize="22dp"
-            android:layout_below="@id/nameTextView"
             android:layout_marginTop="20dp"
             android:id="@+id/userNameTextView"/>
 
@@ -75,7 +58,6 @@
             android:textSize="22dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="55dp"
-            android:layout_below="@id/nameTextView"
             android:layout_marginTop="20dp"
             android:id="@+id/userNameText"/>
 

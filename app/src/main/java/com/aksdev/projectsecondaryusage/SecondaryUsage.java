@@ -56,6 +56,7 @@ public class SecondaryUsage extends AppCompatActivity implements Calculatable {
         DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("Users");
         FirebaseAuth userAuth = FirebaseAuth.getInstance();
 
+
         if(!Objects.isNull(userAuth)){
             FirebaseUser firebaseUser = userAuth.getCurrentUser();
             if(!Objects.isNull(firebaseUser)){

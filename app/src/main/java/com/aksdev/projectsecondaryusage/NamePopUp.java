@@ -1,69 +1,44 @@
 package com.aksdev.projectsecondaryusage;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.EditText;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.Objects;
-
-public class NamePopUp extends Activity {
-    //Firebase reference
-    final FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
-    DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("eC02_DataBase");
-    String userId =   Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
-    DatabaseReference updateUserDataBaseRef = userDataBaseRef.child("Users").child(userId);
-
-    private String currentName = "name";
+public class NamePopUp extends AppCompatActivity {
+    Button submit;
+    EditText newUserName;
+    String newUserNameString;
+    User user;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_name_pop);
+        setContentView(R.layout.activity_name_pop_up);
+        user = LogIn.userProfile;
+        submit = findViewById(R.id.changeUserNameButton);
+        newUserName = findViewById(R.id.newUserName);
 
-    }
-    public void nameBtnOnClick(View view) {
-        TextView nameInput = findViewById(R.id.nameInput);
-        String nameInputString = nameInput.getText().toString().trim();
-        if(nameInputString.equals(currentName) && currentName.length() > 0){
-            if(currentName.length() == 0){
-                Toast toast = Toast.makeText(NamePopUp.this, "You can not left blank space", Toast.LENGTH_LONG);
-                toast.show();
-            }
-            else{
-                Toast toast = Toast.makeText(NamePopUp.this, "Given username is same with previous username", Toast.LENGTH_LONG);
-                toast.show();
-            }
-        }
-        else {
-            updateUserDataBaseRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    currentName = nameInputString;
-                    User currentUser = snapshot.getValue(User.class);
-                    currentUser.setUserName(currentName);
-                    updateUserDataBaseRef.setValue(currentUser);
-                    Toast toast = Toast.makeText(NamePopUp.this, "Username changed ", Toast.LENGTH_LONG);
-                    toast.show();
-                    finish();
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+        int width = dm.widthPixels;
+        int height = dm.heightPixels;
+
+        getWindow().setLayout((int)(width * 0.8), (int)(height* 0.8));
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!newUserName.getText().toString().equals("")) {
+                    newUserNameString = newUserName.getText().toString();
+                    user.setUserName(newUserNameString);
+                    ProfilePage.userName.setText(newUserNameString);
                 }
+            }
+        });
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    Toast.makeText(NamePopUp.this, "Something went wrong... try again", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-        }
     }
 }
