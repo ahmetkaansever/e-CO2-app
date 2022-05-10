@@ -59,7 +59,7 @@ public class SecondaryUsage extends AppCompatActivity implements Calculatable {
         if(!Objects.isNull(userAuth)){
             FirebaseUser firebaseUser = userAuth.getCurrentUser();
             if(!Objects.isNull(firebaseUser)){
-                String userId = firebaseUser.getDisplayName();
+                userId = firebaseUser.getDisplayName();
             }
         }
         if(!Objects.isNull(userId)){
