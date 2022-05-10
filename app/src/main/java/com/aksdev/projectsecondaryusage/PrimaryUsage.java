@@ -162,7 +162,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
             }
             index++;
         }
-        return (int) (result * multp * 0.0001);
+        return (int) (result * multp * 0.001);
     }
 
     @Override

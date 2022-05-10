@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewsAndArticles">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4582D0"
+        tools:context=".NewsAndArticles"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp">
+
+        <Button
+            android:id="@+id/article1btn"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:onClick="displayArticle1"
+            android:text="Environmental News Network"
+            app:layout_constraintBottom_toTopOf="@+id/article2btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/article2btn"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:onClick="displayArticle2"
+            android:text="Challenges Faced by Electric Vehicle Motors and Their Solutions"
+            app:layout_constraintBottom_toTopOf="@+id/article3btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/article1btn" />
+
+        <Button
+            android:id="@+id/article3btn"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:onClick="displayArticle3"
+            android:text="Treehugger News"
+            app:layout_constraintBottom_toTopOf="@+id/article4btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/article2btn" />
+
+        <Button
+            android:id="@+id/article4btn"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:onClick="displayArticle4"
+            android:text="Carbon Footprinting and Pricing Under Climate Concerns"
+            app:layout_constraintBottom_toTopOf="@+id/article5btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/article3btn"
+            tools:layout_editor_absoluteY="283dp" />
+
+        <Button
+            android:id="@+id/article5btn"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:onClick="displayArticle5"
+            android:text="Tracing and Evaluating Life-Cycle Carbon Emissions of Urban Multi-Energy Systems"
+            app:layout_constraintBottom_toTopOf="@+id/article6btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/article4btn"
+            tools:layout_editor_absoluteY="354dp" />
+
+        <Button
+            android:id="@+id/article6btn"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:onClick="displayArticle6"
+            android:text="How Can I Recycle This?"
+            app:layout_constraintBottom_toTopOf="@+id/article7btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/article5btn"
+            tools:layout_editor_absoluteY="432dp" />
+
+        <Button
+            android:id="@+id/article7btn"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:onClick="displayArticle7"
+            android:text="The Effect of Religious Dietary Cultures on Food Nitrogen and Phosphorus Footprints: A Case Study of India"
+            app:layout_constraintBottom_toTopOf="@+id/article8btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/article6btn"
+            tools:layout_editor_absoluteY="506dp" />
+
+        <Button
+            android:id="@+id/article8btn"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:onClick="displayArticle8"
+            android:text="Protocol Climate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/article7btn" />
+
+        <!--<WebView
+            android:id="@+id/webView1"
+            android:layout_width="45dp"
+            android:layout_height="21dp"
+            app:layout_constraintBottom_toBottomOf="@+id/article1btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

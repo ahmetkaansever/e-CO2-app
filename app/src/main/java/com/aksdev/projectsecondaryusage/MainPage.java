@@ -84,13 +84,13 @@ public class MainPage extends AppCompatActivity {
 
             }
         });
-        /*btnNews.setOnClickListener(new View.OnClickListener() {
+        btnNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intNews = new Intent(com.aksdev.projectsecondaryusage.MainPage.this, News.class);
+                Intent intNews = new Intent(com.aksdev.projectsecondaryusage.MainPage.this, NewsAndArticles.class);
                 startActivity(intNews);
             }
-        });*/
+        });
 
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
