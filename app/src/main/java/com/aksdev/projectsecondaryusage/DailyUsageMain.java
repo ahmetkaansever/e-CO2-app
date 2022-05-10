@@ -47,8 +47,7 @@ public class DailyUsageMain extends AppCompatActivity {
         buttonMonthlyCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intMonthly = new Intent(DailyUsageMain.this, MonthlyCalculator.class);
-                startActivity(intMonthly);
+
             }
         });
 

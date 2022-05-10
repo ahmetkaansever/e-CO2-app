@@ -9,6 +9,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class User  {
     String userName;
     String email;
+    int score;
+
 
     public User( String userName, String email){
         this.userName = userName;
@@ -18,11 +20,14 @@ public class User  {
     //Firebase references
 
     Solutions solution;
+    double totalEmission;
+    double primaryEmission;
+    double secondaryEmission;
     //Primary
     double houseHoldEmission;
     double electricityEmission;
     double naturalGasEmission;
-    double lpgEmission;
+    double gasEmission;
     double flightEmission;
     double carEmission;
     double subwayEmission;
@@ -38,6 +43,38 @@ public class User  {
     double furnitureEmission;
     double hotelEmission;
     double educationEmission;
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setGasEmission(double gasEmission) {
+        this.gasEmission = gasEmission;
+    }
+
+    public double getTotalEmission() {
+        return totalEmission;
+    }
+
+    public void setTotalEmission(double totalEmission) {
+        this.totalEmission = totalEmission;
+    }
+
+    public double getPrimaryEmission() {
+        return primaryEmission;
+    }
+
+    public void setPrimaryEmission(double primaryEmission) {
+        this.primaryEmission = primaryEmission;
+    }
+
+    public double getSecondaryEmission() {
+        return secondaryEmission;
+    }
+
+    public void setSecondaryEmission(double secondaryEmission) {
+        this.secondaryEmission = secondaryEmission;
+    }
 
     public void setUserName(String userName) {
         this.userName = userName;
@@ -63,8 +100,8 @@ public class User  {
         this.naturalGasEmission = naturalGasEmission;
     }
 
-    public void setLpgEmission(double lpgEmission) {
-        this.lpgEmission = lpgEmission;
+    public void setLpgEmission(double gasEmission) {
+        this.gasEmission = gasEmission;
     }
 
     public void setFlightEmission(double flightEmission) {
@@ -143,8 +180,8 @@ public class User  {
         return naturalGasEmission;
     }
 
-    public double getLpgEmission() {
-        return lpgEmission;
+    public double getGasEmission() {
+        return gasEmission;
     }
 
     public double getFlightEmission() {
@@ -197,5 +234,9 @@ public class User  {
 
     public double getEducationEmission() {
         return educationEmission;
+    }
+
+    public void setScore(int a){
+        score = a;
     }
 }

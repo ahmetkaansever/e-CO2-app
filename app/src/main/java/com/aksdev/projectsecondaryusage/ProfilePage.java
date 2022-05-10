@@ -50,8 +50,7 @@ public class ProfilePage extends AppCompatActivity {
         changeNameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProfilePage.this, PasswordPopUp.class );
-                startActivity(intent);
+
             }
         });
 
