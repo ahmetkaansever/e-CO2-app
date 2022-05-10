@@ -10,11 +10,13 @@ public class User  {
     String userName;
     String email;
     int score;
+    Solutions mySolutions;
 
 
     public User( String userName, String email){
         this.userName = userName;
         this.email = email;
+        mySolutions = new Solutions();
     }
     public User(){}
     //Firebase references

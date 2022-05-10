@@ -92,38 +92,38 @@ public class SecondaryUsage extends AppCompatActivity implements Calculatable {
                 }
                 if(!pharmaceuticalsEditText.getText().toString().trim().equals("")){
                     pharmaceuticals = Integer.parseInt(pharmaceuticalsEditText.getText().toString());
-                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("pharmaceuticalsEmission").setValue(nutrition);
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("pharmaceuticalsEmission").setValue(pharmaceuticals);
                 }
                 if(!clothingEditText.getText().toString().trim().equals("")){
                     clothing = Integer.parseInt (clothingEditText.getText().toString());
-                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("clothingEmission").setValue(nutrition);
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("clothingEmission").setValue(clothing);
                 }
                 if(!paperProductsEditText.getText().toString().trim().equals("")){
                     paperProducts = Integer.parseInt(paperProductsEditText.getText().toString());
-                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("paperEmission").setValue(nutrition);
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("paperEmission").setValue(paperProducts);
                 }
                 if(!itEquipmentEditText.getText().toString().trim().equals("")){
                     itEquipment = Integer.parseInt(itEquipmentEditText.getText().toString());
-                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("itEmission").setValue(nutrition);
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("itEmission").setValue(itEquipment);
                 }
                 if(!motorVehiclesEditText.getText().toString().trim().equals("")){
                     motorVehicles = Integer.parseInt(motorVehiclesEditText.getText().toString());
-                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("motorEmission").setValue(nutrition);
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("motorEmission").setValue(motorVehicles);
                 }
                 if(!furnitureEditText.getText().toString().trim().equals("")){
                     furniture = Integer.parseInt(furnitureEditText.getText().toString());
-                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("furnitureEmission").setValue(nutrition);
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("furnitureEmission").setValue(furniture);
                 }
                 if(!hotelsEditText.getText().toString().trim().equals("")){
                     hotels = Integer.parseInt(hotelsEditText.getText().toString());
-                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("hotelEmission").setValue(nutrition);
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("hotelEmission").setValue(hotels);
                 }
                 if(!educationEditText.getText().toString().trim().equals("")){
                     education = Integer.parseInt(educationEditText.getText().toString());
-                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("educationEmission").setValue(nutrition);
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("educationEmission").setValue(education);
                 }
                 calculate();
-
+                DailyUsageMain.secondaryDisplay.setText(totalSecondaryUsage + "");
                 Toast.makeText(SecondaryUsage.this, "Successfully submitted!", Toast.LENGTH_SHORT).show();
             }
         });

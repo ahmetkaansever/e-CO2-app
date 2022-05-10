@@ -25,7 +25,7 @@ public class Solutions extends AppCompatActivity {
     private User user;
 
 
-    public Solutions(User user) {
+    public Solutions() {
         solutionTextViews = new ArrayList<>();
         compareBooleans = new boolean[5];
         setCompareBooleans();

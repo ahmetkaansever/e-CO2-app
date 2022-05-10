@@ -12,21 +12,23 @@ import androidx.appcompat.app.AppCompatActivity;
 public class DailyUsageMain extends AppCompatActivity {
 
     Button button;
-    static TextView overallDisplay;
+    static TextView secondaryDisplay;
+    static TextView primaryDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_primary_usage);
 
-        overallDisplay = findViewById(R.id.overallDisplayed);
+        primaryDisplay = findViewById(R.id.primaryDisplay);
+        secondaryDisplay = findViewById(R.id.secondaryDisplayed);
         //overallDisplay.setText((SecondaryUsage.totalSecondaryUsage + PrimaryUsage.total) + "");
 
         Button buttonPrimaryUsage = findViewById(R.id.buttonPrimaryUsage);
         Button buttonSecondaryUsage = findViewById(R.id.buttonSecondaryUsage);
-        Button buttonMonthlyCalculator =  findViewById(R.id.buttonMonthlyCalculator);
+        Button buttonRecycle =  findViewById(R.id.buttonRecycle);
         Button buttonSolutions = findViewById(R.id.buttonSolutions);
-        Button buttonRecycle = findViewById(R.id.buttonRecycle);
+
 
         buttonPrimaryUsage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,13 +43,6 @@ public class DailyUsageMain extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intSec = new Intent(DailyUsageMain.this, SecondaryUsage.class);
                 startActivity(intSec);
-            }
-        });
-
-        buttonMonthlyCalculator.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
             }
         });
 

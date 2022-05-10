@@ -46,6 +46,7 @@
         </activity>
         <activity android:name=".NamePopUp" />
         <activity android:name=".LogIn" />
+        <activity android:name=".Solutions"/>
     </application>
 
 </manifest>

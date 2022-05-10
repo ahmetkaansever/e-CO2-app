@@ -45,6 +45,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 }
                 else {
                     Primerylist[0] = Integer.parseInt(hauseholdEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("houseHoldEmission").setValue(Primerylist[0]);
                 }
 
                 EditText electricityEditText =  findViewById(R.id.electricityEditText);
@@ -53,6 +54,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 }
                 else {
                     Primerylist[1] = Integer.parseInt(electricityEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("electricityEmission").setValue(Primerylist[1]);
                 }
 
                 EditText naturalGasEditText =  findViewById(R.id.naturalGasEditText);
@@ -61,6 +63,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 }
                 else {
                     Primerylist[2] = Integer.parseInt(naturalGasEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("naturalGasEmission").setValue(Primerylist[2]);
                 }
 
                 EditText lpgEditText =  findViewById(R.id.lpgEditText);
@@ -69,6 +72,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 }
                 else {
                     Primerylist[3] =Integer.parseInt(lpgEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("gasEmission").setValue(Primerylist[3]);
                 }
 
                 EditText flightEditText =  findViewById(R.id.flightEditText);
@@ -77,6 +81,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 }
                 else{
                     Primerylist[4] = Integer.parseInt(flightEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("flightEmission").setValue(Primerylist[4]);
                 }
 
                 EditText carEditText =  findViewById(R.id.carEditText);
@@ -85,6 +90,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 }
                 else{
                     Primerylist[5] = Integer.parseInt(carEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("carEmission").setValue(Primerylist[5]);
                 }
 
                 EditText subwayEditText =  findViewById(R.id.subwayEditText);
@@ -93,6 +99,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 }
                 else {
                     Primerylist[6] = Integer.parseInt(subwayEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("subwayEmission").setValue(Primerylist[6]);
                 }
 
                 EditText busEditText =  findViewById(R.id.busEditText);
@@ -101,8 +108,11 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 }
                 else{
                     Primerylist[7] = Integer.parseInt(busEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("busEmission").setValue(Primerylist[7]);
                 }
                 calculate();
+                DailyUsageMain.primaryDisplay.setText(totalPrimaryUsage + "");
+                Toast.makeText(PrimaryUsage.this, "Successfully submitted", Toast.LENGTH_SHORT).show();
             }
         });
     }

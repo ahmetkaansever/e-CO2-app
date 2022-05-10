@@ -28,14 +28,14 @@
         android:text="SECONDARY USAGE" />
 
     <Button
-        android:id="@+id/buttonMonthlyCalculator"
+        android:id="@+id/buttonRecycle"
         android:layout_width="135dp"
         android:layout_height="80dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="195dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="60dp"
-        android:text="MONTHLY CALCULATOR" />
+        android:text="RECYCLE" />
 
     <Button
         android:id="@+id/buttonSolutions"
@@ -47,58 +47,44 @@
         android:layout_marginBottom="60dp"
         android:text="SOLUTIONS" />
 
-    <Button
-        android:id="@+id/buttonRecycle"
-        android:layout_width="135dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="144dp"
-        android:layout_marginTop="320dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="60dp"
-        android:text="RECYCLE" />
-
     <TextView
-        android:id="@+id/monthlyDisplayed"
+        android:id="@+id/primaryDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="154dp"
         android:layout_marginTop="470dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginBottom="60dp"
-        android:text="M SCORE DISPLAY"
+        android:layout_centerHorizontal="true"
+        android:text="P SCORE DISPLAY"
         android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/monthlyText"
+        android:id="@+id/primaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="170dp"
         android:layout_marginTop="450dp"
-        android:layout_marginRight="100dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
-        android:text="Monthly Used:"
+        android:text="Primary Used::"
         android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/overallDisplayed"
+        android:id="@+id/secondaryDisplayed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="158dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="520dp"
-        android:layout_marginRight="100dp"
         android:layout_marginBottom="60dp"
-        android:text="T SCORE DISPLAY"
+        android:text="S SCORE DISPLAY"
         android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/overallText"
+        android:id="@+id/secondaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="175dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="500dp"
-        android:layout_marginRight="100dp"
         android:layout_marginBottom="60dp"
-        android:text="Overall Used:"
+        android:text="Secondary Used:"
         android:textAlignment="center" />
 
 
