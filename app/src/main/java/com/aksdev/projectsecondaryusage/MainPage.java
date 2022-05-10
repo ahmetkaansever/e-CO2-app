@@ -108,7 +108,6 @@ public class MainPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intGps = new Intent(MainPage.this, Gps.class);
-                startActivity(intGps);
 
             }
         });

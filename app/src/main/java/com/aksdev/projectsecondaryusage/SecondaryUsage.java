@@ -53,7 +53,7 @@ public class SecondaryUsage extends AppCompatActivity implements Calculatable {
 
         //FireBase references
         FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
-        DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("eC02_DataBase");
+        DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("Users");
         FirebaseAuth userAuth = FirebaseAuth.getInstance();
 
         if(!Objects.isNull(userAuth)){
@@ -88,50 +88,43 @@ public class SecondaryUsage extends AppCompatActivity implements Calculatable {
                 System.out.println("I am working!!!");
                 if(!nutritionEditText.getText().toString().trim().equals("")){
                     nutrition = Integer.parseInt(nutritionEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("nutritionEmission").setValue(nutrition);
                 }
                 if(!pharmaceuticalsEditText.getText().toString().trim().equals("")){
                     pharmaceuticals = Integer.parseInt(pharmaceuticalsEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("pharmaceuticalsEmission").setValue(nutrition);
                 }
                 if(!clothingEditText.getText().toString().trim().equals("")){
                     clothing = Integer.parseInt (clothingEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("clothingEmission").setValue(nutrition);
                 }
                 if(!paperProductsEditText.getText().toString().trim().equals("")){
                     paperProducts = Integer.parseInt(paperProductsEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("paperEmission").setValue(nutrition);
                 }
                 if(!itEquipmentEditText.getText().toString().trim().equals("")){
                     itEquipment = Integer.parseInt(itEquipmentEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("itEmission").setValue(nutrition);
                 }
                 if(!motorVehiclesEditText.getText().toString().trim().equals("")){
                     motorVehicles = Integer.parseInt(motorVehiclesEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("motorEmission").setValue(nutrition);
                 }
                 if(!furnitureEditText.getText().toString().trim().equals("")){
                     furniture = Integer.parseInt(furnitureEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("furnitureEmission").setValue(nutrition);
                 }
                 if(!hotelsEditText.getText().toString().trim().equals("")){
                     hotels = Integer.parseInt(hotelsEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("hotelEmission").setValue(nutrition);
                 }
                 if(!educationEditText.getText().toString().trim().equals("")){
                     education = Integer.parseInt(educationEditText.getText().toString());
+                    userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("educationEmission").setValue(nutrition);
                 }
-
                 calculate();
-              userDataBaseRef.addValueEventListener(new ValueEventListener() {
-                  @Override
-                  public void onDataChange(@NonNull DataSnapshot snapshot) {
-                      User currentUser = snapshot.getValue(User.class);
-                      currentUser.totalSecondaryEmission += totalSecondaryUsage;
-                      updateUserDataBaseRef.setValue(currentUser);
-                      Toast.makeText(SecondaryUsage.this, "Successfully submitted.", Toast.LENGTH_SHORT).show();
-                      System.out.println(totalSecondaryUsage);
-                  }
 
-                  @Override
-                  public void onCancelled(@NonNull DatabaseError error) {
-
-                  }
-              });
-
-
+                Toast.makeText(SecondaryUsage.this, "Successfully submitted!", Toast.LENGTH_SHORT).show();
             }
         });
     }

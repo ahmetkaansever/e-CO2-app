@@ -9,12 +9,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class User  {
     String userName;
     String email;
-    String profileColor;
-
-
-
-    String password;
-    Uri picture;
 
     public User( String userName, String email){
         this.userName = userName;
@@ -23,57 +17,106 @@ public class User  {
     public User(){}
     //Firebase references
 
-
     Solutions solution;
-    double gasEmission;
-    double motorEmission;
+    //Primary
+    double houseHoldEmission;
+    double electricityEmission;
+    double naturalGasEmission;
+    double lpgEmission;
+    double flightEmission;
+    double carEmission;
+    double subwayEmission;
+    double busEmission;
+
+    //Secondary
     double nutritionEmission;
-    double totalEmission;
-    double totalSecondaryEmission;
-    double totalPrimaryEmission;
-    double paperEmission;
-    double itEmission;
-    double hotelEmission;
-
-    public double getGasEmission() {
-        return gasEmission;
-    }
-
-    public double getMotorEmission() {
-        return motorEmission;
-    }
-
-    public double getNutritionEmission() {
-        return nutritionEmission;
-    }
-
-    public double getPaperEmission() {
-        return paperEmission;
-    }
-
-    public double getItEmission() {
-        return itEmission;
-    }
-
-    public double getHotelEmission() {
-        return hotelEmission;
-    }
-
-    public double getClothingEmission() {
-        return clothingEmission;
-    }
-
-    public double getPharmaceuticalsEmission() {
-        return pharmaceuticalsEmission;
-    }
-
+    double pharmaceuticalEmission;
     double clothingEmission;
-    double score;
-    double pharmaceuticalsEmission;
+    double paperProductEmission;
+    double itEmission;
+    double motorEmission;
+    double furnitureEmission;
+    double hotelEmission;
+    double educationEmission;
 
-    //getters
-    public String getPassword() {
-        return password;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setSolution(Solutions solution) {
+        this.solution = solution;
+    }
+
+    public void setHouseHoldEmission(double houseHoldEmission) {
+        this.houseHoldEmission = houseHoldEmission;
+    }
+
+    public void setElectricityEmission(double electricityEmission) {
+        this.electricityEmission = electricityEmission;
+    }
+
+    public void setNaturalGasEmission(double naturalGasEmission) {
+        this.naturalGasEmission = naturalGasEmission;
+    }
+
+    public void setLpgEmission(double lpgEmission) {
+        this.lpgEmission = lpgEmission;
+    }
+
+    public void setFlightEmission(double flightEmission) {
+        this.flightEmission = flightEmission;
+    }
+
+    public void setCarEmission(double carEmission) {
+        this.carEmission = carEmission;
+    }
+
+    public void setSubwayEmission(double subwayEmission) {
+        this.subwayEmission = subwayEmission;
+    }
+
+    public void setBusEmission(double busEmission) {
+        this.busEmission = busEmission;
+    }
+
+    public void setNutritionEmission(double nutritionEmission) {
+        this.nutritionEmission = nutritionEmission;
+    }
+
+    public void setPharmaceuticalEmission(double pharmaceuticalEmission) {
+        this.pharmaceuticalEmission = pharmaceuticalEmission;
+    }
+
+    public void setClothingEmission(double clothingEmission) {
+        this.clothingEmission = clothingEmission;
+    }
+
+    public void setPaperProductEmission(double paperProductEmission) {
+        this.paperProductEmission = paperProductEmission;
+    }
+
+    public void setItEmission(double itEmission) {
+        this.itEmission = itEmission;
+    }
+
+    public void setMotorEmission(double motorEmission) {
+        this.motorEmission = motorEmission;
+    }
+
+    public void setFurnitureEmission(double furnitureEmission) {
+        this.furnitureEmission = furnitureEmission;
+    }
+
+    public void setHotelEmission(double hotelEmission) {
+        this.hotelEmission = hotelEmission;
+    }
+
+    public void setEducationEmission(double educationEmission) {
+        this.educationEmission = educationEmission;
     }
 
     public String getUserName() {
@@ -84,94 +127,75 @@ public class User  {
         return email;
     }
 
-    public String getProfileColor() {
-        return profileColor;
-    }
-
     public Solutions getSolution() {
         return solution;
     }
 
-    public double getTotalEmission() {
-        return totalEmission;
+    public double getHouseHoldEmission() {
+        return houseHoldEmission;
     }
 
-    public double getTotalSecondaryEmission() {
-        return totalSecondaryEmission;
+    public double getElectricityEmission() {
+        return electricityEmission;
     }
 
-    public double getTotalPrimaryEmission() {
-        return totalPrimaryEmission;
+    public double getNaturalGasEmission() {
+        return naturalGasEmission;
     }
 
-    public double getScore() {
-        return score;
+    public double getLpgEmission() {
+        return lpgEmission;
     }
 
-    //setter for score
-    public void setScore(int s){
-        score += s;
+    public double getFlightEmission() {
+        return flightEmission;
     }
 
-    public void setUserName(String name){
-        this.userName = name;
+    public double getCarEmission() {
+        return carEmission;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public double getSubwayEmission() {
+        return subwayEmission;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public double getBusEmission() {
+        return busEmission;
     }
 
-    public void setProfileColor(String profileColor) {
-        this.profileColor = profileColor;
+    public double getNutritionEmission() {
+        return nutritionEmission;
     }
 
-    public void setSolution(Solutions solution) {
-        this.solution = solution;
+    public double getPharmaceuticalEmission() {
+        return pharmaceuticalEmission;
     }
 
-    public void setGasEmission(double gasEmission) {
-        this.gasEmission = gasEmission;
+    public double getClothingEmission() {
+        return clothingEmission;
     }
 
-    public void setMotorEmission(double motorEmission) {
-        this.motorEmission = motorEmission;
+    public double getPaperProductEmission() {
+        return paperProductEmission;
     }
 
-    public void setNutritionEmission(double nutritionEmission) {
-        this.nutritionEmission = nutritionEmission;
+    public double getItEmission() {
+        return itEmission;
     }
 
-    public void setTotalEmission(double totalEmission) {
-        this.totalEmission = totalEmission;
+    public double getMotorEmission() {
+        return motorEmission;
     }
 
-    public void setTotalSecondaryEmission(double totalSecondaryEmission) {
-        this.totalSecondaryEmission = totalSecondaryEmission;
+    public double getFurnitureEmission() {
+        return furnitureEmission;
     }
 
-    public void setTotalPrimaryEmission(double totalPrimaryEmission) {
-        this.totalPrimaryEmission = totalPrimaryEmission;
+    public double getHotelEmission() {
+        return hotelEmission;
     }
 
-    public void setPaperEmission(double paperEmission) {
-        this.paperEmission = paperEmission;
+    public double getEducationEmission() {
+        return educationEmission;
     }
-
-    public void setItEmission(double itEmission) {
-        this.itEmission = itEmission;
-    }
-
-    public void setHotelEmission(double hotelEmission) {
-        this.hotelEmission = hotelEmission;
-    }
-
-    public void setClothingEmission(double clothingEmission) {
-        this.clothingEmission = clothingEmission;
-    }
-
-
 }

@@ -24,6 +24,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
 
     int[] Primerylist = new int[8];
     private Button SaveButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +32,8 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
         Toast.makeText(this, "Please write how much you have spent on given areas this month", Toast.LENGTH_LONG).show();
 
         FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
-        DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("eC02_DataBase");
-        String userId =   Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName();
-        DatabaseReference updateUserDataBaseRef = userDataBaseRef.child("Users").child(userId);
+        DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("Users");
+        FirebaseAuth userAuth = FirebaseAuth.getInstance();
 
         SaveButton = findViewById(R.id.SaveButton);
         SaveButton.setOnClickListener(new View.OnClickListener() {
@@ -102,22 +102,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 else{
                     Primerylist[7] = Integer.parseInt(busEditText.getText().toString());
                 }
-
-                userDataBaseRef.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        User currentUser = snapshot.getValue(User.class);
-                        currentUser.totalPrimaryEmission += totalPrimaryUsage;
-                        updateUserDataBaseRef.setValue(currentUser);
-                        System.out.println(totalPrimaryUsage);
-                        Toast.makeText(PrimaryUsage.this, "Successfully submitted.", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+                calculate();
             }
         });
     }
