@@ -29,6 +29,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primary_usage);
+        user = LogIn.userProfile;
         Toast.makeText(this, "Please write how much you have spent on given areas this month", Toast.LENGTH_LONG).show();
 
         FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
@@ -46,6 +47,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 else {
                     Primerylist[0] = Integer.parseInt(hauseholdEditText.getText().toString());
                     userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("houseHoldEmission").setValue(Primerylist[0]);
+                    user.setHouseHoldEmission(Primerylist[0] + user.getHouseHoldEmission());
                 }
 
                 EditText electricityEditText =  findViewById(R.id.electricityEditText);
@@ -55,6 +57,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 else {
                     Primerylist[1] = Integer.parseInt(electricityEditText.getText().toString());
                     userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("electricityEmission").setValue(Primerylist[1]);
+                    user.setElectricityEmission(Primerylist[1] + user.getElectricityEmission());
                 }
 
                 EditText naturalGasEditText =  findViewById(R.id.naturalGasEditText);
@@ -64,6 +67,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 else {
                     Primerylist[2] = Integer.parseInt(naturalGasEditText.getText().toString());
                     userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("naturalGasEmission").setValue(Primerylist[2]);
+                    user.setNaturalGasEmission(Primerylist[2] + user.getNaturalGasEmission());
                 }
 
                 EditText lpgEditText =  findViewById(R.id.lpgEditText);
@@ -73,6 +77,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 else {
                     Primerylist[3] =Integer.parseInt(lpgEditText.getText().toString());
                     userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("gasEmission").setValue(Primerylist[3]);
+                    user.setGasEmission(Primerylist[3] + user.getGasEmission());
                 }
 
                 EditText flightEditText =  findViewById(R.id.flightEditText);
@@ -82,6 +87,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 else{
                     Primerylist[4] = Integer.parseInt(flightEditText.getText().toString());
                     userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("flightEmission").setValue(Primerylist[4]);
+                    user.setFlightEmission(Primerylist[4] + user.getFlightEmission());
                 }
 
                 EditText carEditText =  findViewById(R.id.carEditText);
@@ -91,6 +97,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 else{
                     Primerylist[5] = Integer.parseInt(carEditText.getText().toString());
                     userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("carEmission").setValue(Primerylist[5]);
+                    user.setCarEmission(Primerylist[5] + user.getCarEmission());
                 }
 
                 EditText subwayEditText =  findViewById(R.id.subwayEditText);
@@ -100,6 +107,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 else {
                     Primerylist[6] = Integer.parseInt(subwayEditText.getText().toString());
                     userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("subwayEmission").setValue(Primerylist[6]);
+                    user.setSubwayEmission(Primerylist[6] + user.getSubwayEmission());
                 }
 
                 EditText busEditText =  findViewById(R.id.busEditText);
@@ -109,6 +117,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                 else{
                     Primerylist[7] = Integer.parseInt(busEditText.getText().toString());
                     userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("busEmission").setValue(Primerylist[7]);
+                    user.setBusEmission(Primerylist[7] + user.getBusEmission());
                 }
                 calculate();
                 DailyUsageMain.primaryDisplay.setText(totalPrimaryUsage + "");
@@ -153,11 +162,12 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
             }
             index++;
         }
-        return (int) (result * multp * 10);
+        return (int) (result * multp * 0.0001);
     }
 
     @Override
     public void calculate() {
         totalPrimaryUsage = calculatePrimary(Primerylist);
+        user.setPrimaryEmission(totalPrimaryUsage);
     }
 }
