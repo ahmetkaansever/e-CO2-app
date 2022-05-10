@@ -44,6 +44,7 @@ public class Solutions extends AppCompatActivity {
     public final double AVG_NUTRITION_EMISSION = 0.18;
     public final double AVG_CLOTHING_EMISSION = 0.8;
     public final double AVG_IT_EMISSION = 2.0;
+    public double totalEmission;
 
     /*public Solutions() {
         solutionTextViews = new ArrayList<>();
@@ -54,22 +55,22 @@ public class Solutions extends AppCompatActivity {
     }*/
     public double compareWorldAverage(){
 
-        if (this.user.getTotalEmission() >= WORLD_AVERAGE) {
-            worldDifferencePercentage = (((this.user.getTotalEmission()) * 100) / WORLD_AVERAGE) - 100;
+        if (totalEmission >= WORLD_AVERAGE) {
+            worldDifferencePercentage = (((totalEmission) * 100) / WORLD_AVERAGE) - 100;
         }
         else {
-            worldDifferencePercentage = (WORLD_AVERAGE * 100) / ((this.user.getTotalEmission())) - 100;
+            worldDifferencePercentage = (WORLD_AVERAGE * 100) / ((totalEmission)) - 100;
         }
         return worldDifferencePercentage;
     }
 
     public double compareCountryAverage(){
 
-        if (this.user.getTotalEmission() >= COUNTRY_AVERAGE) {
-            countryDifferencePercentage = (((this.user.getTotalEmission()) * 100) / COUNTRY_AVERAGE) - 100;
+        if (totalEmission >= COUNTRY_AVERAGE) {
+            countryDifferencePercentage = (((totalEmission) * 100) / COUNTRY_AVERAGE) - 100;
         }
         else{
-            countryDifferencePercentage = (COUNTRY_AVERAGE * 100) / ((this.user.getTotalEmission())) - 100;
+            countryDifferencePercentage = (COUNTRY_AVERAGE * 100) / ((totalEmission)) - 100;
         }
         return countryDifferencePercentage;
     }
@@ -85,13 +86,13 @@ public class Solutions extends AppCompatActivity {
             if (user.getMotorEmission()> AVG_MOTOR_EMISSION) {
                 compareBooleans[1] = true;
             }
-            if (this.user.getNutritionEmission() > AVG_NUTRITION_EMISSION) {
+            if (totalEmission > AVG_NUTRITION_EMISSION) {
                 compareBooleans[2] = true;
             }
-            if (this.user.getClothingEmission() > AVG_CLOTHING_EMISSION) {
+            if (totalEmission > AVG_CLOTHING_EMISSION) {
                 compareBooleans[3] = true;
             }
-            if (this.user.getItEmission() > AVG_IT_EMISSION) {
+            if (totalEmission > AVG_IT_EMISSION) {
                 compareBooleans[4] = true;
             }
         }
@@ -103,6 +104,8 @@ public class Solutions extends AppCompatActivity {
             setContentView(R.layout.activity_solutions);
 
             user = LogIn.userProfile;
+            totalEmission = user.primaryEmission + user.secondaryEmission;
+
 
             userfir = FirebaseAuth.getInstance().getCurrentUser();
             referance = FirebaseDatabase.getInstance().getReference("Users");
@@ -176,14 +179,14 @@ public class Solutions extends AppCompatActivity {
 
 
 
-            if(this.user.getTotalEmission() > WORLD_AVERAGE){
+            if(totalEmission > WORLD_AVERAGE){
                 solution1.setText("You are " + compareWorldAverage() + "% above world average carbon emission rates.");
             }
             else{
                 solution1.setText("You are " + compareWorldAverage() + "% under world average carbon emission rates.");
             }
 
-            if(this.user.getTotalEmission() > COUNTRY_AVERAGE){
+            if(totalEmission > COUNTRY_AVERAGE){
                 solution2.setText("You are " + compareCountryAverage() + "% above your country average carbon emission rates.");
             }
             else{
