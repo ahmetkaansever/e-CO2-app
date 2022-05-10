@@ -134,6 +134,7 @@ public class SecondaryUsage extends AppCompatActivity implements Calculatable {
                     user.setEducationEmission(education + user.getEducationEmission());
                 }
                 calculate();
+                user.setSecondaryEmission(totalSecondaryUsage);
                 DailyUsageMain.secondaryDisplay.setText(totalSecondaryUsage + "");
                 Toast.makeText(SecondaryUsage.this, "Successfully submitted!", Toast.LENGTH_SHORT).show();
             }

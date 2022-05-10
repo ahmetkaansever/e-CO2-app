@@ -104,7 +104,7 @@ public class Solutions extends AppCompatActivity {
             setContentView(R.layout.activity_solutions);
 
             user = LogIn.userProfile;
-            totalEmission = user.primaryEmission + user.secondaryEmission;
+            totalEmission = user.getPrimaryEmission() + user.getSecondaryEmission();
 
 
             userfir = FirebaseAuth.getInstance().getCurrentUser();

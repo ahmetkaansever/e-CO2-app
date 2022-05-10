@@ -162,11 +162,12 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
             }
             index++;
         }
-        return (int) (result * multp * 10);
+        return (int) (result * multp * 0.0001);
     }
 
     @Override
     public void calculate() {
         totalPrimaryUsage = calculatePrimary(Primerylist);
+        user.setPrimaryEmission(totalPrimaryUsage);
     }
 }
