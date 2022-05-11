@@ -11,12 +11,16 @@ import android.widget.TextView;
 
 //import com.bumptech.glide.Glide;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class MainPage extends AppCompatActivity {
 
-    User userProfile;
+    User user;
 
     private ArrayList<String> quotes = new ArrayList<>();
     private String currentQuote;
@@ -35,8 +39,11 @@ public class MainPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
+        FirebaseDatabase firebaseDatabaseUser = FirebaseDatabase.getInstance();
+        DatabaseReference userDataBaseRef =  firebaseDatabaseUser.getReference("Users");
+        FirebaseAuth userAuth = FirebaseAuth.getInstance();
 
-        userProfile = (User) getIntent().getSerializableExtra("currentUser");
+        user = (User) getIntent().getSerializableExtra("currentUser");
 
         quote = findViewById(R.id.quote);
         //“The Earth is what we all have in common.” —Wendell Berry
@@ -104,7 +111,7 @@ public class MainPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intUsage = new Intent(MainPage.this, DailyUsageMain.class);
-                intUsage.putExtra("currentUser", userProfile);
+                intUsage.putExtra("currentUser", user);
                 startActivity(intUsage);
 
             }
@@ -120,6 +127,7 @@ public class MainPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intProfile = new Intent(MainPage.this, ProfilePage.class);
+                intProfile.putExtra("currentUser", user);
                 startActivity(intProfile);
 
             }

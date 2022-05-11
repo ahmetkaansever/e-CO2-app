@@ -32,7 +32,6 @@ public class DailyUsageMain extends AppCompatActivity {
         Button buttonRecycle =  findViewById(R.id.buttonRecycle);
         Button buttonSolutions = findViewById(R.id.buttonSolutions);
 
-
         buttonPrimaryUsage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

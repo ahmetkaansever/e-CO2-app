@@ -17,7 +17,7 @@ public class ProfilePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_profile_layout);
-
+        user = (User)getIntent().getSerializableExtra("currentUser");
         userName = findViewById(R.id.userNameText);
         score = findViewById(R.id.scoreText);
         rank = findViewById(R.id.rankTextView);

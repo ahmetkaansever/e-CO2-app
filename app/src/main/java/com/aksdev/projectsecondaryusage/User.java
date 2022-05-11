@@ -49,8 +49,9 @@ public class User implements Serializable{
     double hotelEmission;
     double educationEmission;
 
-    public int getScore() {
-        return score;
+    public int getScore(){return score;}
+    public void changeScore(int changesc){
+        score = score + changesc;
     }
 
     public void setGasEmission(double gasEmission) {

@@ -61,7 +61,7 @@ public class Solutions extends AppCompatActivity {
         else {
             worldDifferencePercentage = (WORLD_AVERAGE * 100) / ((totalEmission)) - 100;
         }
-        return worldDifferencePercentage;
+        return Math.round(worldDifferencePercentage);
     }
 
     public double compareCountryAverage(){
@@ -72,7 +72,7 @@ public class Solutions extends AppCompatActivity {
         else{
             countryDifferencePercentage = (COUNTRY_AVERAGE * 100) / ((totalEmission)) - 100;
         }
-        return countryDifferencePercentage;
+        return Math.round(countryDifferencePercentage);
     }
 
     public void setCompareBooleans(){

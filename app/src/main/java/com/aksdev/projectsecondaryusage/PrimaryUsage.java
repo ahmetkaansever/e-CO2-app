@@ -120,7 +120,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
                     user.setBusEmission(Primerylist[7] + user.getBusEmission());
                 }
                 calculate();
-                DailyUsageMain.primaryDisplay.setText(totalPrimaryUsage + "");
+                DailyUsageMain.primaryDisplay.setText(Math.round(totalPrimaryUsage*100.0)/100.0 + "");
                 Toast.makeText(PrimaryUsage.this, "Successfully submitted", Toast.LENGTH_SHORT).show();
             }
         });
@@ -169,5 +169,6 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
     public void calculate() {
         totalPrimaryUsage = calculatePrimary(Primerylist);
         user.setPrimaryEmission(totalPrimaryUsage);
+        user.changeScore((int) totalPrimaryUsage * 10 * (-1));
     }
 }

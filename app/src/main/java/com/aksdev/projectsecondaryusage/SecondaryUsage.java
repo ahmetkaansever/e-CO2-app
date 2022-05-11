@@ -136,7 +136,8 @@ public class SecondaryUsage extends AppCompatActivity implements Calculatable {
                 }
                 calculate();
                 user.setSecondaryEmission(totalSecondaryUsage);
-                DailyUsageMain.secondaryDisplay.setText(totalSecondaryUsage + "");
+                user.changeScore((int) totalSecondaryUsage * 10 * (-1));
+                DailyUsageMain.secondaryDisplay.setText(Math.round(totalSecondaryUsage*100.0)/100.0 + "");
                 Toast.makeText(SecondaryUsage.this, "Successfully submitted!", Toast.LENGTH_SHORT).show();
             }
         });

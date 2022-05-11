@@ -50,6 +50,8 @@ public class Recycle extends AppCompatActivity {
         userAuth = FirebaseAuth.getInstance();
         Button submit = findViewById(R.id.button);
 
+        user = LogIn.userProfile;
+
         paperInput = findViewById(R.id.paperInput);
         plasticInput = findViewById(R.id.plasticInput);
         glassInput = findViewById(R.id.glassInput);
@@ -111,9 +113,8 @@ public class Recycle extends AppCompatActivity {
         }
 
         //ACTUAL METHOD WITH USER CLASS
-        userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("score").setValue(calculateScore());
-
-
+        userDataBaseRef.child(userAuth.getCurrentUser().getUid()).child("score").setValue(user.getScore() + calculateScore());
+        user.setScore(calculateScore());
     }
 
     public int calculateScore()
