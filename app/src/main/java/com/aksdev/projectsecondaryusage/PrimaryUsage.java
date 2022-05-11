@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Objects;
 
 public class PrimaryUsage extends AppCompatActivity implements Calculatable{
-    static int totalPrimaryUsage;
+    static double totalPrimaryUsage;
     User user;
 
     int[] Primerylist = new int[8];
@@ -125,7 +125,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
             }
         });
     }
-    public int calculatePrimary(int[] primerylist){
+    public double calculatePrimary(int[] primerylist){
         int result =0;
         int multp = primerylist[0];
         int index = 1;
@@ -162,7 +162,7 @@ public class PrimaryUsage extends AppCompatActivity implements Calculatable{
             }
             index++;
         }
-        return (int) (result * multp * 0.001);
+        return (result * multp * 0.001);
     }
 
     @Override
