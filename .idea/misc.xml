@@ -38,6 +38,12 @@
         <entry key="..\:/Users/90533/Desktop/e-CO2_mainmerge/app/src/main/res/layout/monthly_calculator.xml" value="0.18425925925925926" />
         <entry key="..\:/Users/90533/Desktop/e-CO2_mainmerge/app/src/main/res/layout/pdf_activity.xml" value="0.20462962962962963" />
         <entry key="..\:/Users/90533/Desktop/e-CO2_mainmerge/app/src/main/res/layout/primary_usage.xml" value="0.25" />
+        <entry key="..\:/Users/doga6.LAPTOP-RKDVAR1J/AndroidStudioProjects/newProjectlastone/app/src/main/res/layout/activity_about_us.xml" value="0.5" />
+        <entry key="..\:/Users/doga6.LAPTOP-RKDVAR1J/AndroidStudioProjects/newProjectlastone/app/src/main/res/layout/activity_main_primary_usage.xml" value="0.25" />
+        <entry key="..\:/Users/doga6.LAPTOP-RKDVAR1J/AndroidStudioProjects/newProjectlastone/app/src/main/res/layout/activity_name_pop.xml" value="0.1" />
+        <entry key="..\:/Users/doga6.LAPTOP-RKDVAR1J/AndroidStudioProjects/newProjectlastone/app/src/main/res/layout/activity_name_pop_up.xml" value="0.1" />
+        <entry key="..\:/Users/doga6.LAPTOP-RKDVAR1J/AndroidStudioProjects/newProjectlastone/app/src/main/res/layout/activity_newsandarticles.xml" value="0.25" />
+        <entry key="..\:/Users/doga6.LAPTOP-RKDVAR1J/AndroidStudioProjects/newProjectlastone/app/src/main/res/layout/activity_start.xml" value="0.1" />
         <entry key="..\:/Users/user/StudioProjects/newProjectlastone/app/src/main/res/layout/activity_log_in.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/user/StudioProjects/newProjectlastone/app/src/main/res/layout/activity_main_primary_usage.xml" value="0.2346014492753623" />
         <entry key="..\:/Users/user/StudioProjects/newProjectlastone/app/src/main/res/layout/activity_register.xml" value="0.28854166666666664" />
@@ -55,16 +61,12 @@
         <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_main_primary_usage.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_main_profile_layout.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_name_pop.xml" value="0.19010416666666666" />
-        <entry key="app/src/main/res/layout/activity_name_pop_up.xml" value="0.29583333333333334" />
-        <entry key="app/src/main/res/layout/activity_password_pop.xml" value="0.19010416666666666" />
-        <entry key="app/src/main/res/layout/activity_password_pop_up.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_main_profile_layout.xml" value="0.13524729410807293" />
         <entry key="app/src/main/res/layout/activity_recycle.xml" value="0.16822916666666668" />
         <entry key="app/src/main/res/layout/activity_secondary_calculator.xml" value="0.16822916666666668" />
         <entry key="app/src/main/res/layout/activity_solutions.xml" value="0.16822916666666668" />
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.16822916666666668" />
-        <entry key="app/src/main/res/layout/home_page.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/home_page.xml" value="0.1078125" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1415" />
       </map>
